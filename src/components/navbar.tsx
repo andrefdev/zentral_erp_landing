@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { MagneticButton } from "@/components/animations/magnetic-button";
 
 const navLinks = [
   { label: "Producto", href: "#solucion" },
@@ -22,8 +23,11 @@ export function Navbar() {
   }, []);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
           ? "bg-black/80 backdrop-blur-xl border-b border-[#262626]/50"
           : "bg-transparent"
@@ -32,36 +36,46 @@ export function Navbar() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3">
+          <motion.a
+            href="#"
+            className="flex items-center gap-3"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 400 }}
+          >
             <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
               <span className="text-black font-bold text-sm">Z</span>
             </div>
             <span className="text-white font-semibold text-lg tracking-tight hidden sm:block">
               Zentral
             </span>
-          </a>
+          </motion.a>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
+            {navLinks.map((link, i) => (
+              <motion.a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-[#A3A3A3] hover:text-white transition-colors duration-200"
+                className="text-sm text-[#A3A3A3] hover:text-white transition-colors duration-200 relative"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 + i * 0.1 }}
+                whileHover={{ y: -1 }}
               >
                 {link.label}
-              </a>
+              </motion.a>
             ))}
           </div>
 
           {/* CTA + Mobile Toggle */}
           <div className="flex items-center gap-4">
-            <a
+            <MagneticButton
               href="#precios"
-              className="bg-white text-black text-sm font-medium px-5 py-2 rounded-lg hover:bg-[#9333EA] hover:text-white transition-all duration-200"
+              className="bg-white text-black text-sm font-medium px-5 py-2 rounded-lg hover:bg-[#9333EA] hover:text-white transition-all duration-300 inline-block"
+              strength={0.15}
             >
               Empieza gratis
-            </a>
+            </MagneticButton>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className="md:hidden text-white"
@@ -80,23 +94,27 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="md:hidden bg-black/95 backdrop-blur-xl border-b border-[#262626]"
           >
             <div className="px-6 py-6 flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <a
+              {navLinks.map((link, i) => (
+                <motion.a
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
                   className="text-[#A3A3A3] hover:text-white transition-colors text-base"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.05 }}
                 >
                   {link.label}
-                </a>
+                </motion.a>
               ))}
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </motion.nav>
   );
 }

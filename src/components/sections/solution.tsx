@@ -1,6 +1,9 @@
 "use client";
 
-import { ScrollReveal, SectionNumber } from "@/components/scroll-reveal";
+import { SectionNumber } from "@/components/scroll-reveal";
+import { SplitWords } from "@/components/animations/split-text";
+import { StaggerContainer, StaggerItem } from "@/components/animations/stagger-children";
+import { motion } from "framer-motion";
 import {
   Users,
   CheckSquare,
@@ -69,29 +72,45 @@ export function Solution() {
       <div className="max-w-[1200px] mx-auto">
         <SectionNumber number="03" />
 
-        <ScrollReveal>
-          <h2 className="text-[28px] sm:text-[36px] lg:text-[40px] font-medium text-white leading-[1.15] tracking-[-0.015em] max-w-3xl mb-4">
-            Una sola plataforma para toda tu operación.
-          </h2>
-        </ScrollReveal>
+        <SplitWords
+          text="Una sola plataforma para toda tu operación."
+          className="text-[28px] sm:text-[36px] lg:text-[40px] font-medium text-white leading-[1.15] tracking-[-0.015em] max-w-3xl mb-4"
+        />
 
-        <ScrollReveal delay={0.1}>
-          <p className="text-lg text-[#A3A3A3] leading-relaxed max-w-2xl mb-16">
-            Zentral integra en un solo lugar todo lo que tu empresa necesita
-            para operar, crecer y competir.
-          </p>
-        </ScrollReveal>
+        <motion.p
+          initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          className="text-lg text-[#A3A3A3] leading-relaxed max-w-2xl mb-16"
+        >
+          Zentral integra en un solo lugar todo lo que tu empresa necesita
+          para operar, crecer y competir.
+        </motion.p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {modules.map((mod, i) => (
-            <ScrollReveal key={mod.name} delay={i * 0.08}>
-              <div className="group bg-[#1A1A1A] border border-[#262626] rounded-xl p-6 hover:border-[#9333EA] transition-all duration-300 hover:-translate-y-1 h-full">
+        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {modules.map((mod) => (
+            <StaggerItem key={mod.name}>
+              <motion.div
+                className="group bg-[#1A1A1A] border border-[#262626] rounded-xl p-6 h-full cursor-default"
+                whileHover={{
+                  borderColor: "#9333EA",
+                  y: -4,
+                  scale: 1.02,
+                  transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] },
+                }}
+              >
                 <div className="flex items-start justify-between mb-4">
-                  <mod.icon
-                    className="text-[#A3A3A3] group-hover:text-[#9333EA] transition-colors duration-300"
-                    size={22}
-                    strokeWidth={1.5}
-                  />
+                  <motion.div
+                    whileHover={{ rotate: 10, scale: 1.2 }}
+                    transition={{ type: "spring", stiffness: 400 }}
+                  >
+                    <mod.icon
+                      className="text-[#A3A3A3] group-hover:text-[#9333EA] transition-colors duration-300"
+                      size={22}
+                      strokeWidth={1.5}
+                    />
+                  </motion.div>
                   <span
                     className={`text-[11px] font-medium tracking-wider uppercase px-2.5 py-1 rounded-full ${
                       mod.status === "available"
@@ -108,10 +127,10 @@ export function Solution() {
                 <p className="text-[#A3A3A3] text-sm leading-relaxed">
                   {mod.description}
                 </p>
-              </div>
-            </ScrollReveal>
+              </motion.div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );

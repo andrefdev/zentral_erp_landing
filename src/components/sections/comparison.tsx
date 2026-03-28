@@ -1,80 +1,24 @@
 "use client";
 
-import { ScrollReveal, SectionNumber } from "@/components/scroll-reveal";
+import { SectionNumber } from "@/components/scroll-reveal";
+import { SplitWords } from "@/components/animations/split-text";
+import { motion } from "framer-motion";
 import { Check, Minus } from "lucide-react";
 
 const features = [
-  {
-    name: "RRHH y nóminas",
-    zentral: true,
-    odoo: true,
-    defontana: false,
-    monday: false,
-    zoho: "partial",
-  },
-  {
-    name: "Gestión de tareas",
-    zentral: true,
-    odoo: true,
-    defontana: false,
-    monday: true,
-    zoho: true,
-  },
-  {
-    name: "Documentos y Drive",
-    zentral: true,
-    odoo: "partial",
-    defontana: false,
-    monday: false,
-    zoho: "partial",
-  },
-  {
-    name: "Inventario",
-    zentral: true,
-    odoo: true,
-    defontana: false,
-    monday: false,
-    zoho: true,
-  },
-  {
-    name: "Contabilidad SUNAT",
-    zentral: true,
-    odoo: "partial",
-    defontana: true,
-    monday: false,
-    zoho: false,
-  },
-  {
-    name: "IA operativa",
-    zentral: true,
-    odoo: false,
-    defontana: false,
-    monday: "partial",
-    zoho: false,
-  },
-  {
-    name: "Personalización visual",
-    zentral: true,
-    odoo: false,
-    defontana: false,
-    monday: "partial",
-    zoho: false,
-  },
-  {
-    name: "Implementación < 1 mes",
-    zentral: true,
-    odoo: false,
-    defontana: "partial",
-    monday: true,
-    zoho: "partial",
-  },
+  { name: "RRHH y nóminas", zentral: true, odoo: true, defontana: false, monday: false, zoho: "partial" },
+  { name: "Gestión de tareas", zentral: true, odoo: true, defontana: false, monday: true, zoho: true },
+  { name: "Documentos y Drive", zentral: true, odoo: "partial", defontana: false, monday: false, zoho: "partial" },
+  { name: "Inventario", zentral: true, odoo: true, defontana: false, monday: false, zoho: true },
+  { name: "Contabilidad SUNAT", zentral: true, odoo: "partial", defontana: true, monday: false, zoho: false },
+  { name: "IA operativa", zentral: true, odoo: false, defontana: false, monday: "partial", zoho: false },
+  { name: "Personalización visual", zentral: true, odoo: false, defontana: false, monday: "partial", zoho: false },
+  { name: "Implementación < 1 mes", zentral: true, odoo: false, defontana: "partial", monday: true, zoho: "partial" },
 ];
 
 function CellValue({ value }: { value: boolean | string }) {
-  if (value === true)
-    return <Check size={16} className="text-white" strokeWidth={2.5} />;
-  if (value === "partial")
-    return <span className="text-amber-400 text-xs font-medium">Parcial</span>;
+  if (value === true) return <Check size={16} className="text-white" strokeWidth={2.5} />;
+  if (value === "partial") return <span className="text-amber-400 text-xs font-medium">Parcial</span>;
   return <Minus size={16} className="text-[#404040]" />;
 }
 
@@ -84,87 +28,65 @@ export function Comparison() {
       <div className="max-w-[1200px] mx-auto">
         <SectionNumber number="05" />
 
-        <ScrollReveal>
-          <h2 className="text-[28px] sm:text-[36px] lg:text-[40px] font-medium text-white leading-[1.15] tracking-[-0.015em] max-w-3xl mb-16">
-            Zentral vs. la competencia.
-          </h2>
-        </ScrollReveal>
+        <SplitWords
+          text="Zentral vs. la competencia."
+          className="text-[28px] sm:text-[36px] lg:text-[40px] font-medium text-white leading-[1.15] tracking-[-0.015em] max-w-3xl mb-16"
+        />
 
-        <ScrollReveal delay={0.2}>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
           <div className="overflow-x-auto -mx-6 px-6">
             <table className="w-full min-w-[700px]">
               <thead>
                 <tr className="border-b border-[#262626]">
-                  <th className="text-left text-sm text-[#737373] font-normal pb-4 pr-4 w-[200px]">
-                    Funcionalidad
-                  </th>
-                  <th className="text-center text-sm font-medium text-white pb-4 px-4 border-t-2 border-[#9333EA] pt-3 bg-[#9333EA]/5 rounded-t-lg">
-                    Zentral
-                  </th>
-                  <th className="text-center text-sm text-[#737373] font-normal pb-4 px-4">
-                    Odoo
-                  </th>
-                  <th className="text-center text-sm text-[#737373] font-normal pb-4 px-4">
-                    Defontana
-                  </th>
-                  <th className="text-center text-sm text-[#737373] font-normal pb-4 px-4">
-                    Monday
-                  </th>
-                  <th className="text-center text-sm text-[#737373] font-normal pb-4 px-4">
-                    Zoho
-                  </th>
+                  <th className="text-left text-sm text-[#737373] font-normal pb-4 pr-4 w-[200px]">Funcionalidad</th>
+                  <th className="text-center text-sm font-medium text-white pb-4 px-4 border-t-2 border-[#9333EA] pt-3 bg-[#9333EA]/5 rounded-t-lg">Zentral</th>
+                  <th className="text-center text-sm text-[#737373] font-normal pb-4 px-4">Odoo</th>
+                  <th className="text-center text-sm text-[#737373] font-normal pb-4 px-4">Defontana</th>
+                  <th className="text-center text-sm text-[#737373] font-normal pb-4 px-4">Monday</th>
+                  <th className="text-center text-sm text-[#737373] font-normal pb-4 px-4">Zoho</th>
                 </tr>
               </thead>
               <tbody>
                 {features.map((feature, i) => (
-                  <tr
+                  <motion.tr
                     key={feature.name}
-                    className={`border-b border-[#1A1A1A] ${
-                      i % 2 === 0 ? "" : "bg-[#0A0A0A]/50"
-                    }`}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}
+                    className={`border-b border-[#1A1A1A] ${i % 2 === 0 ? "" : "bg-[#0A0A0A]/50"}`}
                   >
-                    <td className="text-sm text-[#A3A3A3] py-4 pr-4">
-                      {feature.name}
-                    </td>
+                    <td className="text-sm text-[#A3A3A3] py-4 pr-4">{feature.name}</td>
                     <td className="text-center py-4 px-4 bg-[#9333EA]/5">
-                      <div className="flex justify-center">
-                        <CellValue value={feature.zentral} />
-                      </div>
+                      <div className="flex justify-center"><CellValue value={feature.zentral} /></div>
                     </td>
-                    <td className="text-center py-4 px-4">
-                      <div className="flex justify-center">
-                        <CellValue value={feature.odoo} />
-                      </div>
-                    </td>
-                    <td className="text-center py-4 px-4">
-                      <div className="flex justify-center">
-                        <CellValue value={feature.defontana} />
-                      </div>
-                    </td>
-                    <td className="text-center py-4 px-4">
-                      <div className="flex justify-center">
-                        <CellValue value={feature.monday} />
-                      </div>
-                    </td>
-                    <td className="text-center py-4 px-4">
-                      <div className="flex justify-center">
-                        <CellValue value={feature.zoho} />
-                      </div>
-                    </td>
-                  </tr>
+                    <td className="text-center py-4 px-4"><div className="flex justify-center"><CellValue value={feature.odoo} /></div></td>
+                    <td className="text-center py-4 px-4"><div className="flex justify-center"><CellValue value={feature.defontana} /></div></td>
+                    <td className="text-center py-4 px-4"><div className="flex justify-center"><CellValue value={feature.monday} /></div></td>
+                    <td className="text-center py-4 px-4"><div className="flex justify-center"><CellValue value={feature.zoho} /></div></td>
+                  </motion.tr>
                 ))}
               </tbody>
             </table>
           </div>
-        </ScrollReveal>
+        </motion.div>
 
-        <ScrollReveal delay={0.3}>
-          <p className="text-base text-[#A3A3A3] mt-10">
-            <span className="text-white font-medium">$199/mes</span> con 10
-            usuarios incluidos — 20% más barato que Odoo, 46% más barato que
-            Zoho, 34% más barato que Monday.
-          </p>
-        </ScrollReveal>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="text-base text-[#A3A3A3] mt-10"
+        >
+          <span className="text-white font-medium">$199/mes</span> con 10
+          usuarios incluidos — 20% más barato que Odoo, 46% más barato que
+          Zoho, 34% más barato que Monday.
+        </motion.p>
       </div>
     </section>
   );

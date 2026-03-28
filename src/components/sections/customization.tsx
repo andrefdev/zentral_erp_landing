@@ -1,41 +1,22 @@
 "use client";
 
 import { useState } from "react";
-import { ScrollReveal, SectionNumber } from "@/components/scroll-reveal";
+import { SectionNumber } from "@/components/scroll-reveal";
+import { SplitWords } from "@/components/animations/split-text";
 import { motion, AnimatePresence } from "framer-motion";
 
 const themes = [
-  {
-    color: "#E11D48",
-    label: "Estudio contable",
-    name: "Rojo",
-    accent: "rose",
-  },
-  {
-    color: "#2563EB",
-    label: "Consultora tech",
-    name: "Azul",
-    accent: "blue",
-  },
-  {
-    color: "#16A34A",
-    label: "Agroexportadora",
-    name: "Verde",
-    accent: "green",
-  },
-  {
-    color: "#EA580C",
-    label: "Restaurante",
-    name: "Naranja",
-    accent: "orange",
-  },
+  { color: "#E11D48", label: "Estudio contable", name: "Rojo" },
+  { color: "#2563EB", label: "Consultora tech", name: "Azul" },
+  { color: "#16A34A", label: "Agroexportadora", name: "Verde" },
+  { color: "#EA580C", label: "Restaurante", name: "Naranja" },
 ];
 
-function MockupUI({ color, label }: { color: string; label: string }) {
+function MockupUI({ color, label, isLarge = false }: { color: string; label: string; isLarge?: boolean }) {
   return (
-    <div className="bg-[#111111] rounded-xl border border-[#262626] overflow-hidden">
+    <div className={`bg-[#111111] rounded-xl border border-[#262626] overflow-hidden ${isLarge ? "" : ""}`}>
       {/* Title bar */}
-      <div className="flex items-center gap-2 px-4 py-3 border-b border-[#262626]">
+      <div className="flex items-center gap-2 px-4 py-3 border-b border-[#1A1A1A]">
         <div className="flex gap-1.5">
           <div className="w-2.5 h-2.5 rounded-full bg-[#333]" />
           <div className="w-2.5 h-2.5 rounded-full bg-[#333]" />
@@ -43,79 +24,70 @@ function MockupUI({ color, label }: { color: string; label: string }) {
         </div>
         <span className="text-[11px] text-[#737373] ml-2">{label}</span>
       </div>
-
-      {/* Content */}
-      <div className="p-4">
-        {/* Sidebar + Main simulation */}
+      <div className={`p-4 ${isLarge ? "p-5" : ""}`}>
         <div className="flex gap-3">
           {/* Mini sidebar */}
-          <div className="w-16 flex flex-col gap-2">
-            <div
+          <div className={`${isLarge ? "w-20" : "w-16"} flex flex-col gap-2`}>
+            <motion.div
               className="h-7 rounded-md"
               style={{ backgroundColor: color + "20" }}
+              layoutId={isLarge ? undefined : undefined}
             >
-              <div
-                className="h-full w-full rounded-md flex items-center justify-center"
-                style={{ borderLeft: `2px solid ${color}` }}
-              >
-                <div
-                  className="w-3 h-3 rounded-sm"
-                  style={{ backgroundColor: color }}
-                />
+              <div className="h-full w-full rounded-md flex items-center justify-center" style={{ borderLeft: `2px solid ${color}` }}>
+                <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: color }} />
               </div>
-            </div>
+            </motion.div>
             {[1, 2, 3, 4].map((n) => (
               <div key={n} className="h-7 rounded-md bg-[#1A1A1A]" />
             ))}
           </div>
-
           {/* Main area */}
           <div className="flex-1 flex flex-col gap-3">
-            {/* Header bar */}
             <div className="flex items-center justify-between">
               <div className="h-4 w-24 bg-[#262626] rounded" />
-              <div
+              <motion.div
                 className="h-6 w-16 rounded-md text-[10px] text-white flex items-center justify-center font-medium"
                 style={{ backgroundColor: color }}
+                whileHover={{ scale: 1.05 }}
               >
                 + Nuevo
-              </div>
+              </motion.div>
             </div>
-
-            {/* Stats row */}
             <div className="grid grid-cols-3 gap-2">
-              {[1, 2, 3].map((n) => (
+              {[{ v: "24" }, { v: "89%" }, { v: "$12K" }].map((item, n) => (
                 <div key={n} className="bg-[#1A1A1A] rounded-lg p-2.5">
                   <div className="h-2.5 w-8 bg-[#262626] rounded mb-1.5" />
-                  <div
-                    className="h-4 w-10 rounded font-bold text-[11px] flex items-center"
-                    style={{ color }}
-                  >
-                    {n === 1 ? "24" : n === 2 ? "89%" : "$12K"}
+                  <div className="h-4 w-10 rounded font-bold text-[11px] flex items-center" style={{ color }}>
+                    {item.v}
                   </div>
                 </div>
               ))}
             </div>
-
-            {/* List items */}
             <div className="flex flex-col gap-1.5">
               {[1, 2, 3].map((n) => (
-                <div
-                  key={n}
-                  className="h-8 bg-[#1A1A1A] rounded-lg flex items-center px-3 gap-2"
-                >
-                  <div
-                    className="w-2 h-2 rounded-full"
-                    style={{
-                      backgroundColor:
-                        n === 1 ? color : n === 2 ? "#737373" : "#404040",
-                    }}
-                  />
+                <div key={n} className="h-8 bg-[#1A1A1A] rounded-lg flex items-center px-3 gap-2">
+                  <div className="w-2 h-2 rounded-full" style={{ backgroundColor: n === 1 ? color : n === 2 ? "#737373" : "#404040" }} />
                   <div className="h-2 flex-1 bg-[#262626] rounded" />
                   <div className="h-2 w-8 bg-[#262626] rounded" />
                 </div>
               ))}
             </div>
+            {isLarge && (
+              <div className="grid grid-cols-2 gap-2 mt-1">
+                <div className="h-16 bg-[#1A1A1A] rounded-lg p-3 flex flex-col justify-between">
+                  <div className="h-2 w-12 bg-[#262626] rounded" />
+                  <div className="h-6 w-full rounded-md" style={{ background: `linear-gradient(90deg, ${color}40, transparent)` }} />
+                </div>
+                <div className="h-16 bg-[#1A1A1A] rounded-lg p-3 flex flex-col justify-between">
+                  <div className="h-2 w-10 bg-[#262626] rounded" />
+                  <div className="flex gap-1">
+                    {[1, 2, 3, 4].map((n) => (
+                      <div key={n} className="flex-1 h-4 rounded-sm" style={{ backgroundColor: n <= 3 ? color + "60" : "#262626" }} />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -131,81 +103,115 @@ export function Customization() {
       <div className="max-w-[1200px] mx-auto">
         <SectionNumber number="04" />
 
-        <ScrollReveal>
-          <h2 className="text-[28px] sm:text-[36px] lg:text-[40px] font-medium text-white leading-[1.15] tracking-[-0.015em] max-w-3xl mb-4">
-            Se adapta a tu empresa, no al revés.
-          </h2>
-        </ScrollReveal>
+        <SplitWords
+          text="Se adapta a tu empresa, no al revés."
+          className="text-[28px] sm:text-[36px] lg:text-[40px] font-medium text-white leading-[1.15] tracking-[-0.015em] max-w-3xl mb-4"
+        />
 
-        <ScrollReveal delay={0.1}>
-          <p className="text-lg text-[#A3A3A3] leading-relaxed max-w-2xl mb-12">
-            Elige tu color. Personaliza tu interfaz. Zentral se convierte en tu
-            plataforma, con tu identidad.
-          </p>
-        </ScrollReveal>
+        <motion.p
+          initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          className="text-lg text-[#A3A3A3] leading-relaxed max-w-2xl mb-12"
+        >
+          Elige tu color. Personaliza tu interfaz. Zentral se convierte en tu
+          plataforma, con tu identidad.
+        </motion.p>
 
         {/* Color selector */}
-        <ScrollReveal delay={0.2}>
-          <div className="flex items-center gap-3 mb-10">
-            {themes.map((theme, i) => (
-              <button
-                key={theme.color}
-                onClick={() => setSelected(i)}
-                className={`w-10 h-10 rounded-full border-2 transition-all duration-200 ${
-                  selected === i
-                    ? "border-white scale-110"
-                    : "border-transparent hover:border-[#737373]"
-                }`}
-                style={{ backgroundColor: theme.color }}
-                aria-label={theme.name}
-              />
-            ))}
-            <span className="text-sm text-[#737373] ml-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex items-center gap-4 mb-10"
+        >
+          {themes.map((theme, i) => (
+            <motion.button
+              key={theme.color}
+              onClick={() => setSelected(i)}
+              className="relative w-12 h-12 rounded-full"
+              style={{ backgroundColor: theme.color }}
+              whileHover={{ scale: 1.15 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 15 }}
+              aria-label={theme.name}
+            >
+              {selected === i && (
+                <motion.div
+                  layoutId="color-ring"
+                  className="absolute inset-[-4px] rounded-full border-2 border-white"
+                  transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                />
+              )}
+            </motion.button>
+          ))}
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={selected}
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 10 }}
+              className="text-sm text-[#737373] ml-2"
+            >
               {themes[selected].label}
-            </span>
-          </div>
-        </ScrollReveal>
+            </motion.span>
+          </AnimatePresence>
+        </motion.div>
 
-        {/* Mockups grid */}
-        <ScrollReveal delay={0.3}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
+        {/* Mockups */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 lg:gap-6">
             {/* Featured large mockup */}
-            <div className="sm:col-span-2 lg:col-span-1">
+            <div className="lg:col-span-3">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={selected}
-                  initial={{ opacity: 0, scale: 0.98 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.98 }}
-                  transition={{ duration: 0.3 }}
+                  initial={{ opacity: 0, scale: 0.95, rotateY: -5 }}
+                  animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+                  exit={{ opacity: 0, scale: 0.95, rotateY: 5 }}
+                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                  style={{ perspective: 1200 }}
                 >
                   <MockupUI
                     color={themes[selected].color}
                     label={themes[selected].label}
+                    isLarge
                   />
                 </motion.div>
               </AnimatePresence>
             </div>
 
-            {/* Other mockups */}
-            <div className="grid grid-cols-2 gap-4 sm:col-span-2 lg:col-span-1">
+            {/* Small mockups */}
+            <div className="lg:col-span-2 grid grid-cols-2 lg:grid-cols-1 gap-4">
               {themes
                 .filter((_, i) => i !== selected)
                 .slice(0, 2)
-                .map((theme) => (
-                  <div
-                    key={theme.color}
-                    className="opacity-50 hover:opacity-80 transition-opacity cursor-pointer"
-                    onClick={() =>
-                      setSelected(themes.findIndex((t) => t.color === theme.color))
-                    }
-                  >
-                    <MockupUI color={theme.color} label={theme.label} />
-                  </div>
-                ))}
+                .map((theme) => {
+                  const idx = themes.findIndex((t) => t.color === theme.color);
+                  return (
+                    <motion.div
+                      key={theme.color}
+                      className="cursor-pointer"
+                      whileHover={{ scale: 1.03, opacity: 1 }}
+                      initial={{ opacity: 0.5 }}
+                      animate={{ opacity: 0.5 }}
+                      onClick={() => setSelected(idx)}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <MockupUI color={theme.color} label={theme.label} />
+                    </motion.div>
+                  );
+                })}
             </div>
           </div>
-        </ScrollReveal>
+        </motion.div>
       </div>
     </section>
   );
