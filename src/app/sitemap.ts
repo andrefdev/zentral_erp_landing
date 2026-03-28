@@ -4,43 +4,28 @@ const BASE_URL = "https://zentral.indrox.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString();
+  const locales = ["es", "en"];
 
-  return [
-    {
-      url: BASE_URL,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 1.0,
-    },
-    {
-      url: `${BASE_URL}/vs-odoo`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/vs-defontana`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/vs-excel`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/vs-monday`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${BASE_URL}/vs-zoho`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
+  const pages = [
+    { path: "", changeFrequency: "weekly" as const, priority: 1.0 },
+    { path: "/vs-odoo", changeFrequency: "monthly" as const, priority: 0.8 },
+    { path: "/vs-defontana", changeFrequency: "monthly" as const, priority: 0.8 },
+    { path: "/vs-excel", changeFrequency: "monthly" as const, priority: 0.8 },
+    { path: "/vs-monday", changeFrequency: "monthly" as const, priority: 0.8 },
+    { path: "/vs-zoho", changeFrequency: "monthly" as const, priority: 0.8 },
   ];
+
+  return pages.flatMap((page) =>
+    locales.map((locale) => ({
+      url: `${BASE_URL}/${locale}${page.path}`,
+      lastModified: now,
+      changeFrequency: page.changeFrequency,
+      priority: page.priority,
+      alternates: {
+        languages: Object.fromEntries(
+          locales.map((l) => [l, `${BASE_URL}/${l}${page.path}`])
+        ),
+      },
+    }))
+  );
 }

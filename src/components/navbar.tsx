@@ -1,19 +1,30 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const navLinks = [
-  { label: "Producto", href: "#solucion" },
-  { label: "Precios", href: "#precios" },
-  { label: "Comparativa", href: "#comparativa" },
-  { label: "Roadmap", href: "#roadmap" },
-];
+interface NavDict {
+  product: string;
+  pricing: string;
+  comparison: string;
+  roadmap: string;
+  cta: string;
+}
 
-export function Navbar() {
+export function Navbar({ dict, lang }: { dict: NavDict; lang: string }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const navLinks = [
+    { label: dict.product, href: "#solucion" },
+    { label: dict.pricing, href: "#precios" },
+    { label: dict.comparison, href: "#comparativa" },
+    { label: dict.roadmap, href: "#roadmap" },
+  ];
+
+  const otherLang = lang === "es" ? "en" : "es";
+  const otherLangLabel = lang === "es" ? "EN" : "ES";
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -34,7 +45,7 @@ export function Navbar() {
     >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <a href="#" className="flex items-center gap-3">
+          <a href={`/${lang}`} className="flex items-center gap-3">
             <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
               <span className="text-black font-bold text-sm">Z</span>
             </div>
@@ -55,12 +66,22 @@ export function Navbar() {
             ))}
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
+            {/* Language switcher */}
+            <a
+              href={`/${otherLang}`}
+              className="flex items-center gap-1.5 text-sm text-[#A3A3A3] hover:text-white transition-colors duration-200"
+              aria-label={`Switch to ${otherLangLabel}`}
+            >
+              <Globe size={14} />
+              <span className="hidden sm:inline">{otherLangLabel}</span>
+            </a>
+
             <a
               href="#precios"
               className="bg-white text-black text-sm font-medium px-5 py-2 rounded-lg hover:bg-[#9333EA] hover:text-white transition-all duration-300"
             >
-              Empieza gratis
+              {dict.cta}
             </a>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -93,6 +114,13 @@ export function Navbar() {
                   {link.label}
                 </a>
               ))}
+              <a
+                href={`/${otherLang}`}
+                className="flex items-center gap-2 text-[#A3A3A3] hover:text-white transition-colors text-base"
+              >
+                <Globe size={16} />
+                {otherLang === "en" ? "English" : "Español"}
+              </a>
             </div>
           </motion.div>
         )}

@@ -1,0 +1,160 @@
+{
+  "meta": {
+    "title": "Zentral | The Operational Platform for SMBs in Peru & LATAM",
+    "description": "Centralize HR, tasks, documents, inventory, and accounting in one platform. No Excel. No chaos. From $79/month."
+  },
+  "nav": {
+    "product": "Product",
+    "pricing": "Pricing",
+    "comparison": "Compare",
+    "roadmap": "Roadmap",
+    "cta": "Start free"
+  },
+  "hero": {
+    "badge": "Operational platform for businesses",
+    "title1": "Your entire business,",
+    "title2": "in one place.",
+    "subtitle": "HR, tasks, documents, inventory, accounting & AI. All connected. No Excel. No WhatsApp. No chaos.",
+    "cta1": "Start free",
+    "cta2": "See demo",
+    "microcopy": "No credit card required. Ready in 5 minutes."
+  },
+  "problem": {
+    "title": "68% of SMBs operate with broken tools.",
+    "cards": [
+      {
+        "title": "Excel + WhatsApp + Drive",
+        "description": "Scattered data, manual errors, hours lost copying information between tools."
+      },
+      {
+        "title": "Limited accounting software",
+        "description": "Only handles invoicing, but doesn't manage tasks, teams, documents, or operations."
+      },
+      {
+        "title": "Complex & expensive ERPs",
+        "description": "Odoo takes 3-6 months to implement. SAP costs +$40K/year. They need consultants."
+      },
+      {
+        "title": "Disconnected tools",
+        "description": "A CRM here, a task manager there, payroll somewhere else. Nothing talks to each other."
+      }
+    ],
+    "marketData": "The cloud ERP market for SMBs in LATAM reaches USD $2.81B"
+  },
+  "solution": {
+    "title": "One platform for your entire operation.",
+    "subtitle": "Zentral integrates everything your business needs to operate, grow, and compete in one place.",
+    "available": "Available",
+    "coming": "Coming soon",
+    "modules": [
+      { "name": "Zentral People", "description": "HR management, payroll & teams" },
+      { "name": "Zentral Work", "description": "Tasks, projects & productivity" },
+      { "name": "Zentral Docs", "description": "Documents & electronic signatures" },
+      { "name": "Zentral Drive", "description": "Integrated cloud storage" },
+      { "name": "Zentral Inventory", "description": "Stock & warehouse management" },
+      { "name": "Zentral Accounting", "description": "Accounting & SUNAT invoicing" },
+      { "name": "Zentral AI", "description": "AI agents for operational analysis" },
+      { "name": "Zentral Pay", "description": "Subscriptions & recurring payments" }
+    ]
+  },
+  "customization": {
+    "title": "It adapts to your business, not the other way around.",
+    "subtitle": "Choose your color. Customize your interface. Zentral becomes your platform, with your identity.",
+    "themes": [
+      { "label": "Accounting firm", "name": "Red" },
+      { "label": "Tech consultancy", "name": "Blue" },
+      { "label": "Agro-exporter", "name": "Green" },
+      { "label": "Restaurant", "name": "Orange" }
+    ]
+  },
+  "comparison": {
+    "title": "Zentral vs. the competition.",
+    "feature": "Feature",
+    "partial": "Partial",
+    "footer": "$199/month with 10 users included — 20% cheaper than Odoo, 46% cheaper than Zoho, 34% cheaper than Monday.",
+    "features": [
+      "HR & payroll",
+      "Task management",
+      "Documents & Drive",
+      "Inventory",
+      "SUNAT accounting",
+      "Operational AI",
+      "Visual customization",
+      "Implementation < 1 month"
+    ]
+  },
+  "pricing": {
+    "title": "Simple pricing. No surprises.",
+    "popular": "Most popular",
+    "cta": "Start free",
+    "promo": "20% off on annual billing. First 50 customers: 25% off the first year.",
+    "perMonth": "/month",
+    "plans": [
+      {
+        "name": "Starter",
+        "price": 79,
+        "description": "For entrepreneurs and micro-businesses.",
+        "features": ["Up to 3 users", "10 GB Drive", "Basic Zentral People", "Zentral Work", "Zentral Docs", "Email support"]
+      },
+      {
+        "name": "Professional",
+        "price": 199,
+        "description": "For growing SMBs.",
+        "features": ["Up to 10 users", "50 GB Drive", "All modules", "Zentral AI included", "Visual customization", "Priority support"]
+      },
+      {
+        "name": "Enterprise",
+        "price": 349,
+        "description": "For large and complex operations.",
+        "features": ["Up to 25 users", "200 GB Drive", "Everything unlimited", "API & webhooks", "Dedicated onboarding", "Guaranteed SLA"]
+      }
+    ]
+  },
+  "roadmap": {
+    "title": "What's coming.",
+    "sprints": [
+      { "date": "April 2026", "label": "Sprint 1", "features": ["Accounting + SUNAT", "Fixed Assets", "Subscriptions & recurring payments"] },
+      { "date": "May 2026", "label": "Sprint 2", "features": ["Sales CRM", "Purchasing Module", "Corporate Email"] },
+      { "date": "June 2026", "label": "Sprint 3", "features": ["Advanced AI Agents", "Document OCR", "BI Dashboards"] },
+      { "date": "July 2026", "label": "Sprint 4", "features": ["Gantt & planning", "OKRs & goals", "Internal Wiki", "POS", "Multi-Warehouse"] }
+    ]
+  },
+  "whyZentral": {
+    "title": "What makes us different.",
+    "reasons": [
+      { "number": "01", "title": "Truly all-in-one", "description": "Not 50 apps duct-taped together. A unified platform where every module communicates natively." },
+      { "number": "02", "title": "Integrated Drive & docs", "description": "No external Google Drive needed. Your storage lives inside Zentral, connected to every process." },
+      { "number": "03", "title": "Operational AI", "description": "A 24/7 analyst, not a chatbot. Analyzes your operation, suggests improvements, and automates repetitive tasks." },
+      { "number": "04", "title": "Customizable", "description": "Your color, your Zentral. Every business has its identity. Your platform should reflect it." },
+      { "number": "05", "title": "Fast implementation", "description": "Weeks, not months. No consultants, no endless projects. Configure and start working." },
+      { "number": "06", "title": "Affordable pricing", "description": "Enterprise functionality, SMB pricing. From $79/month with everything you need." }
+    ]
+  },
+  "trust": {
+    "metrics": [
+      { "value": 7, "label": "modules available" },
+      { "value": 3, "label": "plans from $79/month" },
+      { "value": 4, "prefix": "<", "label": "weeks to implement" }
+    ],
+    "quote": "We built Zentral because SMBs deserve tools as powerful as those of large enterprises, but without the complexity or the price.",
+    "quoteAuthor": "— Founding team, Indrox"
+  },
+  "cta": {
+    "title": "Your business deserves more than fragmented tools.",
+    "subtitle": "Zentral is the complete operational platform for SMBs in Peru and Latin America.",
+    "button": "Start free",
+    "contact": "Contact us:"
+  },
+  "footer": {
+    "tagline": "The operational platform for SMBs in LATAM.",
+    "product": "Product",
+    "company": "Company",
+    "legal": "Legal",
+    "links": {
+      "product": ["Modules", "Pricing", "Roadmap", "Comparison"],
+      "company": ["About us", "Blog", "Careers", "Contact"],
+      "legal": ["Privacy", "Terms", "SLA"]
+    },
+    "copyright": "All rights reserved."
+  }
+}

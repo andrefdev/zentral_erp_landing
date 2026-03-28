@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_PE",
-    alternateLocale: ["es_CO", "es_CL", "es_MX", "es_AR"],
+    alternateLocale: ["es_CO", "es_CL", "es_MX", "es_AR", "en_US"],
     url: BASE_URL,
     siteName: "Zentral",
     title: "Zentral | La plataforma operativa para PYMES en Perú y LATAM",
@@ -79,6 +79,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: BASE_URL,
+    languages: {
+      es: `${BASE_URL}/es`,
+      en: `${BASE_URL}/en`,
+    },
   },
   category: "technology",
   classification: "Business Software",
@@ -104,16 +108,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${dmSans.variable} h-full antialiased`}>
+    <html className={`${dmSans.variable} h-full antialiased`} suppressHydrationWarning>
       <head>
-        <link rel="canonical" href={BASE_URL} />
-        <meta name="geo.region" content="PE" />
-        <meta name="geo.placename" content="Lima, Peru" />
-        <meta name="ICBM" content="-12.0464, -77.0428" />
-        <link rel="alternate" hrefLang="es" href={BASE_URL} />
-        <link rel="alternate" hrefLang="es-PE" href={BASE_URL} />
-        <link rel="alternate" hrefLang="es-419" href={BASE_URL} />
-        <link rel="alternate" hrefLang="x-default" href={BASE_URL} />
+        <link rel="alternate" hrefLang="es" href={`${BASE_URL}/es`} />
+        <link rel="alternate" hrefLang="en" href={`${BASE_URL}/en`} />
+        <link rel="alternate" hrefLang="x-default" href={`${BASE_URL}/es`} />
       </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

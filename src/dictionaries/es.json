@@ -1,0 +1,160 @@
+{
+  "meta": {
+    "title": "Zentral | La plataforma operativa para PYMES en Perú y LATAM",
+    "description": "Centraliza RRHH, tareas, documentos, inventario y contabilidad en una sola plataforma. Sin Excel. Sin caos. Desde $79/mes."
+  },
+  "nav": {
+    "product": "Producto",
+    "pricing": "Precios",
+    "comparison": "Comparativa",
+    "roadmap": "Roadmap",
+    "cta": "Empieza gratis"
+  },
+  "hero": {
+    "badge": "Plataforma operativa para empresas",
+    "title1": "Tu empresa entera,",
+    "title2": "en un solo lugar.",
+    "subtitle": "RRHH, tareas, documentos, inventario, contabilidad e IA. Todo conectado. Sin Excel. Sin WhatsApp. Sin caos.",
+    "cta1": "Empieza gratis",
+    "cta2": "Ver demo",
+    "microcopy": "Sin tarjeta de crédito. Listo en 5 minutos."
+  },
+  "problem": {
+    "title": "El 68% de las PYMES operan con herramientas rotas.",
+    "cards": [
+      {
+        "title": "Excel + WhatsApp + Drive",
+        "description": "Datos dispersos, errores manuales, horas perdidas copiando información entre herramientas."
+      },
+      {
+        "title": "Software contable limitado",
+        "description": "Solo resuelve facturación, pero no gestiona tareas, equipos, documentos ni operaciones."
+      },
+      {
+        "title": "ERPs complejos y caros",
+        "description": "Odoo tarda 3-6 meses en implementar. SAP cuesta +$40K al año. Necesitan consultoras."
+      },
+      {
+        "title": "Herramientas desconectadas",
+        "description": "Un CRM aquí, un gestor de tareas allá, nómina en otro lado. Nada se habla entre sí."
+      }
+    ],
+    "marketData": "El mercado ERP cloud para PYMES en LATAM alcanza USD $2.81B"
+  },
+  "solution": {
+    "title": "Una sola plataforma para toda tu operación.",
+    "subtitle": "Zentral integra en un solo lugar todo lo que tu empresa necesita para operar, crecer y competir.",
+    "available": "Disponible",
+    "coming": "Próximamente",
+    "modules": [
+      { "name": "Zentral People", "description": "Gestión de RRHH, nóminas y equipos" },
+      { "name": "Zentral Work", "description": "Tareas, proyectos y productividad" },
+      { "name": "Zentral Docs", "description": "Documentos y firma electrónica" },
+      { "name": "Zentral Drive", "description": "Almacenamiento cloud integrado" },
+      { "name": "Zentral Inventory", "description": "Control de stock y almacenes" },
+      { "name": "Zentral Accounting", "description": "Contabilidad y facturación SUNAT" },
+      { "name": "Zentral AI", "description": "Agentes IA para análisis operativo" },
+      { "name": "Zentral Pay", "description": "Suscripciones y pagos recurrentes" }
+    ]
+  },
+  "customization": {
+    "title": "Se adapta a tu empresa, no al revés.",
+    "subtitle": "Elige tu color. Personaliza tu interfaz. Zentral se convierte en tu plataforma, con tu identidad.",
+    "themes": [
+      { "label": "Estudio contable", "name": "Rojo" },
+      { "label": "Consultora tech", "name": "Azul" },
+      { "label": "Agroexportadora", "name": "Verde" },
+      { "label": "Restaurante", "name": "Naranja" }
+    ]
+  },
+  "comparison": {
+    "title": "Zentral vs. la competencia.",
+    "feature": "Funcionalidad",
+    "partial": "Parcial",
+    "footer": "$199/mes con 10 usuarios incluidos — 20% más barato que Odoo, 46% más barato que Zoho, 34% más barato que Monday.",
+    "features": [
+      "RRHH y nóminas",
+      "Gestión de tareas",
+      "Documentos y Drive",
+      "Inventario",
+      "Contabilidad SUNAT",
+      "IA operativa",
+      "Personalización visual",
+      "Implementación < 1 mes"
+    ]
+  },
+  "pricing": {
+    "title": "Precios simples. Sin sorpresas.",
+    "popular": "Más popular",
+    "cta": "Empieza gratis",
+    "promo": "20% de descuento en pago anual. Primeros 50 clientes: 25% off el primer año.",
+    "perMonth": "/mes",
+    "plans": [
+      {
+        "name": "Starter",
+        "price": 79,
+        "description": "Para emprendedores y microempresas.",
+        "features": ["Hasta 3 usuarios", "10 GB Drive", "Zentral People básico", "Zentral Work", "Zentral Docs", "Soporte por email"]
+      },
+      {
+        "name": "Profesional",
+        "price": 199,
+        "description": "Para PYMES en crecimiento.",
+        "features": ["Hasta 10 usuarios", "50 GB Drive", "Todos los módulos", "Zentral AI incluido", "Personalización visual", "Soporte prioritario"]
+      },
+      {
+        "name": "Empresa",
+        "price": 349,
+        "description": "Para operaciones grandes y complejas.",
+        "features": ["Hasta 25 usuarios", "200 GB Drive", "Todo ilimitado", "API y webhooks", "Onboarding dedicado", "SLA garantizado"]
+      }
+    ]
+  },
+  "roadmap": {
+    "title": "Lo que viene.",
+    "sprints": [
+      { "date": "Abril 2026", "label": "Sprint 1", "features": ["Contabilidad + SUNAT", "Activos Fijos", "Suscripciones y pagos recurrentes"] },
+      { "date": "Mayo 2026", "label": "Sprint 2", "features": ["CRM de ventas", "Módulo de Compras", "Correo Corporativo"] },
+      { "date": "Junio 2026", "label": "Sprint 3", "features": ["Agentes IA avanzados", "OCR para documentos", "Dashboards BI"] },
+      { "date": "Julio 2026", "label": "Sprint 4", "features": ["Gantt y planificación", "OKRs y metas", "Wiki interno", "POS", "Multi-Almacén"] }
+    ]
+  },
+  "whyZentral": {
+    "title": "Lo que nos hace diferentes.",
+    "reasons": [
+      { "number": "01", "title": "Todo en uno, de verdad", "description": "No son 50 apps pegadas con cinta. Es una plataforma unificada donde cada módulo se comunica con los demás." },
+      { "number": "02", "title": "Drive y documentos integrados", "description": "Adiós Google Drive externo. Tu almacenamiento vive dentro de Zentral, conectado a cada proceso." },
+      { "number": "03", "title": "IA operativa", "description": "Un analista 24/7, no un chatbot. Analiza tu operación, sugiere mejoras y automatiza tareas repetitivas." },
+      { "number": "04", "title": "Personalizable", "description": "Tu color, tu Zentral. Cada empresa tiene su identidad. Tu plataforma debería reflejarla." },
+      { "number": "05", "title": "Implementación rápida", "description": "Semanas, no meses. Sin consultoras, sin proyectos eternos. Configura y empieza a trabajar." },
+      { "number": "06", "title": "Precio accesible", "description": "Funcionalidad enterprise, precio PYME. Desde $79/mes con todo lo que necesitas." }
+    ]
+  },
+  "trust": {
+    "metrics": [
+      { "value": 7, "label": "módulos disponibles" },
+      { "value": 3, "label": "planes desde $79/mes" },
+      { "value": 4, "prefix": "<", "label": "semanas de implementación" }
+    ],
+    "quote": "Construimos Zentral porque las PYMES merecen herramientas tan potentes como las de las grandes empresas, pero sin la complejidad ni el precio.",
+    "quoteAuthor": "— Equipo fundador, Indrox"
+  },
+  "cta": {
+    "title": "Tu empresa merece más que herramientas fragmentadas.",
+    "subtitle": "Zentral es la plataforma operativa completa para PYMES en Perú y Latinoamérica.",
+    "button": "Empieza gratis",
+    "contact": "Contáctanos:"
+  },
+  "footer": {
+    "tagline": "La plataforma operativa para PYMES en LATAM.",
+    "product": "Producto",
+    "company": "Empresa",
+    "legal": "Legal",
+    "links": {
+      "product": ["Módulos", "Precios", "Roadmap", "Comparativa"],
+      "company": ["Sobre nosotros", "Blog", "Carreras", "Contacto"],
+      "legal": ["Privacidad", "Términos", "SLA"]
+    },
+    "copyright": "Todos los derechos reservados."
+  }
+}
