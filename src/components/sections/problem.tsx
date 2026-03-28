@@ -4,7 +4,6 @@ import { SectionNumber } from "@/components/scroll-reveal";
 import { SplitWords } from "@/components/animations/split-text";
 import { StaggerContainer, StaggerItem } from "@/components/animations/stagger-children";
 import { Marquee } from "@/components/animations/marquee";
-import { TiltOnScroll } from "@/components/animations/parallax";
 import { motion } from "framer-motion";
 import { FileSpreadsheet, Calculator, Server, Unplug } from "lucide-react";
 
@@ -74,43 +73,28 @@ export function Problem() {
         <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 mb-16">
           {problems.map((problem) => (
             <StaggerItem key={problem.title}>
-              <TiltOnScroll>
-                <motion.div
-                  className="bg-[#1A1A1A] border border-[#262626] rounded-xl p-6 lg:p-8 h-full group cursor-default"
-                  whileHover={{
-                    borderColor: "#9333EA",
-                    y: -4,
-                    transition: { duration: 0.3 },
-                  }}
-                >
-                  <motion.div
-                    whileHover={{ rotate: -10, scale: 1.1 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    <problem.icon
-                      className="text-[#737373] group-hover:text-[#9333EA] transition-colors duration-300 mb-4"
-                      size={24}
-                      strokeWidth={1.5}
-                    />
-                  </motion.div>
-                  <h3 className="text-white font-medium text-lg mb-2">
-                    {problem.title}
-                  </h3>
-                  <p className="text-[#A3A3A3] text-base leading-relaxed">
-                    {problem.description}
-                  </p>
-                </motion.div>
-              </TiltOnScroll>
+              <div className="bg-[#1A1A1A] border border-[#262626] rounded-xl p-6 lg:p-8 h-full group cursor-default hover:border-[#9333EA] hover:-translate-y-1 transition-all duration-300">
+                <problem.icon
+                  className="text-[#737373] group-hover:text-[#9333EA] transition-colors duration-300 mb-4"
+                  size={24}
+                  strokeWidth={1.5}
+                />
+                <h3 className="text-white font-medium text-lg mb-2">
+                  {problem.title}
+                </h3>
+                <p className="text-[#A3A3A3] text-base leading-relaxed">
+                  {problem.description}
+                </p>
+              </div>
             </StaggerItem>
           ))}
         </StaggerContainer>
 
         <motion.div
-          initial={{ opacity: 0, scaleX: 0 }}
-          whileInView={{ opacity: 1, scaleX: 1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="origin-left"
+          transition={{ duration: 0.6, delay: 0.2 }}
         >
           <div className="border-t border-[#262626] pt-6">
             <p className="text-sm text-[#737373]">

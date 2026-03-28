@@ -34,10 +34,10 @@ export function Comparison() {
         />
 
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
           <div className="overflow-x-auto -mx-6 px-6">
             <table className="w-full min-w-[700px]">
@@ -53,23 +53,14 @@ export function Comparison() {
               </thead>
               <tbody>
                 {features.map((feature, i) => (
-                  <motion.tr
-                    key={feature.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}
-                    className={`border-b border-[#1A1A1A] ${i % 2 === 0 ? "" : "bg-[#0A0A0A]/50"}`}
-                  >
+                  <tr key={feature.name} className={`border-b border-[#1A1A1A] ${i % 2 === 0 ? "" : "bg-[#0A0A0A]/50"}`}>
                     <td className="text-sm text-[#A3A3A3] py-4 pr-4">{feature.name}</td>
-                    <td className="text-center py-4 px-4 bg-[#9333EA]/5">
-                      <div className="flex justify-center"><CellValue value={feature.zentral} /></div>
-                    </td>
+                    <td className="text-center py-4 px-4 bg-[#9333EA]/5"><div className="flex justify-center"><CellValue value={feature.zentral} /></div></td>
                     <td className="text-center py-4 px-4"><div className="flex justify-center"><CellValue value={feature.odoo} /></div></td>
                     <td className="text-center py-4 px-4"><div className="flex justify-center"><CellValue value={feature.defontana} /></div></td>
                     <td className="text-center py-4 px-4"><div className="flex justify-center"><CellValue value={feature.monday} /></div></td>
                     <td className="text-center py-4 px-4"><div className="flex justify-center"><CellValue value={feature.zoho} /></div></td>
-                  </motion.tr>
+                  </tr>
                 ))}
               </tbody>
             </table>
@@ -77,15 +68,13 @@ export function Comparison() {
         </motion.div>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.5 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           className="text-base text-[#A3A3A3] mt-10"
         >
-          <span className="text-white font-medium">$199/mes</span> con 10
-          usuarios incluidos — 20% más barato que Odoo, 46% más barato que
-          Zoho, 34% más barato que Monday.
+          <span className="text-white font-medium">$199/mes</span> con 10 usuarios incluidos — 20% más barato que Odoo, 46% más barato que Zoho, 34% más barato que Monday.
         </motion.p>
       </div>
     </section>
