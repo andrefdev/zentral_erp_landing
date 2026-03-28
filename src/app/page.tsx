@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/navbar";
 import { ScrollProgress } from "@/components/animations/scroll-progress";
+import { StructuredData } from "@/components/structured-data";
 import { Hero } from "@/components/sections/hero";
 import { Problem } from "@/components/sections/problem";
 import { Solution } from "@/components/sections/solution";
@@ -13,19 +14,22 @@ import { CTAFooter } from "@/components/sections/cta-footer";
 
 export default function Home() {
   return (
-    <main>
-      <ScrollProgress />
-      <Navbar />
-      <Hero />
-      <Problem />
-      <Solution />
-      <Customization />
-      <Comparison />
-      <Pricing />
-      <Roadmap />
-      <WhyZentral />
-      <Trust />
-      <CTAFooter />
-    </main>
+    <>
+      <StructuredData />
+      <main>
+        <ScrollProgress />
+        <Navbar />
+        <Hero />
+        <Problem />
+        <Solution />
+        <Customization />
+        <Comparison />
+        <Pricing />
+        <Roadmap />
+        <WhyZentral />
+        <Trust />
+        <CTAFooter />
+      </main>
+    </>
   );
 }
