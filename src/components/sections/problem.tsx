@@ -6,6 +6,7 @@ import { StaggerContainer, StaggerItem } from "@/components/animations/stagger-c
 import { Marquee } from "@/components/animations/marquee";
 import { motion } from "framer-motion";
 import { FileSpreadsheet, Calculator, Server, Unplug } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const icons = [FileSpreadsheet, Calculator, Server, Unplug];
 
@@ -14,20 +15,17 @@ const brokenTools = [
   "Odoo", "SAP", "QuickBooks", "Slack", "Asana", "Zoho",
 ];
 
-interface ProblemDict {
-  title: string;
-  cards: { title: string; description: string }[];
-  marketData: string;
-}
+export function Problem() {
+  const t = useTranslations("problem");
+  const cards = t.raw("cards") as { title: string; description: string }[];
 
-export function Problem({ dict }: { dict: ProblemDict }) {
   return (
     <section id="problema" className="bg-[#0A0A0A] py-32 lg:py-40 px-6 overflow-hidden">
       <div className="max-w-[1200px] mx-auto">
         <SectionNumber number="02" />
 
         <SplitWords
-          text={dict.title}
+          text={t("title")}
           className="text-[28px] sm:text-[36px] lg:text-[40px] font-medium text-white leading-[1.15] tracking-[-0.015em] max-w-3xl mb-6"
         />
 
@@ -51,7 +49,7 @@ export function Problem({ dict }: { dict: ProblemDict }) {
         </motion.div>
 
         <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 mb-16">
-          {dict.cards.map((card, i) => {
+          {cards.map((card, i) => {
             const Icon = icons[i];
             return (
               <StaggerItem key={card.title}>
@@ -76,7 +74,7 @@ export function Problem({ dict }: { dict: ProblemDict }) {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <div className="border-t border-[#262626] pt-6">
-            <p className="text-sm text-[#737373]">{dict.marketData}</p>
+            <p className="text-sm text-[#737373]">{t("marketData")}</p>
           </div>
         </motion.div>
       </div>

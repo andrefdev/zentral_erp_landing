@@ -3,18 +3,11 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { SplitWords } from "@/components/animations/split-text";
+import { useTranslations } from "next-intl";
 
-interface HeroDict {
-  badge: string;
-  title1: string;
-  title2: string;
-  subtitle: string;
-  cta1: string;
-  cta2: string;
-  microcopy: string;
-}
+export function Hero() {
+  const t = useTranslations("hero");
 
-export function Hero({ dict }: { dict: HeroDict }) {
   return (
     <section
       id="hero"
@@ -29,19 +22,19 @@ export function Hero({ dict }: { dict: HeroDict }) {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
           <span className="inline-block text-xs font-medium tracking-[3px] uppercase text-[#A3A3A3] border border-[#262626] rounded-full px-5 py-2 mb-8">
-            {dict.badge}
+            {t("badge")}
           </span>
         </motion.div>
 
         <div className="mb-6">
           <SplitWords
-            text={dict.title1}
+            text={t("title1")}
             as="h1"
             className="text-[32px] sm:text-[40px] md:text-[56px] lg:text-[64px] font-medium text-white leading-[1.1] tracking-[-0.02em]"
             delay={0.15}
           />
           <SplitWords
-            text={dict.title2}
+            text={t("title2")}
             as="span"
             className="text-[32px] sm:text-[40px] md:text-[56px] lg:text-[64px] font-medium text-white leading-[1.1] tracking-[-0.02em] block"
             delay={0.4}
@@ -54,7 +47,7 @@ export function Hero({ dict }: { dict: HeroDict }) {
           transition={{ duration: 0.7, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="text-base sm:text-lg text-[#A3A3A3] leading-relaxed max-w-2xl mx-auto mb-10"
         >
-          {dict.subtitle}
+          {t("subtitle")}
         </motion.p>
 
         <motion.div
@@ -67,13 +60,13 @@ export function Hero({ dict }: { dict: HeroDict }) {
             href="#precios"
             className="bg-white text-black font-medium px-8 py-3.5 rounded-lg text-base hover:bg-[#9333EA] hover:text-white transition-all duration-300 w-full sm:w-auto text-center"
           >
-            {dict.cta1}
+            {t("cta1")}
           </a>
           <a
             href="#solucion"
             className="border border-[#262626] text-white font-medium px-8 py-3.5 rounded-lg text-base hover:border-[#9333EA] hover:text-[#9333EA] transition-all duration-300 w-full sm:w-auto text-center"
           >
-            {dict.cta2}
+            {t("cta2")}
           </a>
         </motion.div>
 
@@ -83,7 +76,7 @@ export function Hero({ dict }: { dict: HeroDict }) {
           transition={{ duration: 0.6, delay: 1.1 }}
           className="text-[13px] text-[#737373]"
         >
-          {dict.microcopy}
+          {t("microcopy")}
         </motion.p>
       </div>
 

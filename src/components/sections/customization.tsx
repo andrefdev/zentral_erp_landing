@@ -4,14 +4,9 @@ import { useState } from "react";
 import { SectionNumber } from "@/components/scroll-reveal";
 import { SplitWords } from "@/components/animations/split-text";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const colors = ["#E11D48", "#2563EB", "#16A34A", "#EA580C"];
-
-interface CustomizationDict {
-  title: string;
-  subtitle: string;
-  themes: { label: string; name: string }[];
-}
 
 function MockupUI({ color, label, isLarge = false }: { color: string; label: string; isLarge?: boolean }) {
   return (
@@ -79,24 +74,26 @@ function MockupUI({ color, label, isLarge = false }: { color: string; label: str
   );
 }
 
-export function Customization({ dict }: { dict: CustomizationDict }) {
+export function Customization() {
+  const t = useTranslations("customization");
+  const themes = t.raw("themes") as { label: string; name: string }[];
   const [selected, setSelected] = useState(0);
 
   return (
     <section id="personalizacion" className="bg-[#0A0A0A] py-32 lg:py-40 px-6">
       <div className="max-w-[1200px] mx-auto">
         <SectionNumber number="04" />
-        <SplitWords text={dict.title} className="text-[28px] sm:text-[36px] lg:text-[40px] font-medium text-white leading-[1.15] tracking-[-0.015em] max-w-3xl mb-4" />
-        <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }} className="text-lg text-[#A3A3A3] leading-relaxed max-w-2xl mb-12">{dict.subtitle}</motion.p>
+        <SplitWords text={t("title")} className="text-[28px] sm:text-[36px] lg:text-[40px] font-medium text-white leading-[1.15] tracking-[-0.015em] max-w-3xl mb-4" />
+        <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }} className="text-lg text-[#A3A3A3] leading-relaxed max-w-2xl mb-12">{t("subtitle")}</motion.p>
 
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }} className="flex items-center gap-4 mb-10">
-          {dict.themes.map((theme, i) => (
+          {themes.map((theme, i) => (
             <motion.button key={colors[i]} onClick={() => setSelected(i)} className="relative w-12 h-12 rounded-full" style={{ backgroundColor: colors[i] }} whileHover={{ scale: 1.15 }} whileTap={{ scale: 0.95 }} transition={{ type: "spring", stiffness: 400, damping: 15 }} aria-label={theme.name}>
               {selected === i && (<motion.div layoutId="color-ring" className="absolute inset-[-4px] rounded-full border-2 border-white" transition={{ type: "spring", stiffness: 300, damping: 25 }} />)}
             </motion.button>
           ))}
           <AnimatePresence mode="wait">
-            <motion.span key={selected} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 10 }} className="text-sm text-[#737373] ml-2">{dict.themes[selected].label}</motion.span>
+            <motion.span key={selected} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 10 }} className="text-sm text-[#737373] ml-2">{themes[selected].label}</motion.span>
           </AnimatePresence>
         </motion.div>
 
@@ -105,13 +102,13 @@ export function Customization({ dict }: { dict: CustomizationDict }) {
             <div className="lg:col-span-3">
               <AnimatePresence mode="wait">
                 <motion.div key={selected} initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }} transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}>
-                  <MockupUI color={colors[selected]} label={dict.themes[selected].label} isLarge />
+                  <MockupUI color={colors[selected]} label={themes[selected].label} isLarge />
                 </motion.div>
               </AnimatePresence>
             </div>
             <div className="lg:col-span-2 grid grid-cols-2 lg:grid-cols-1 gap-4">
-              {dict.themes.filter((_, i) => i !== selected).slice(0, 2).map((theme) => {
-                const idx = dict.themes.findIndex((t) => t.name === theme.name);
+              {themes.filter((_, i) => i !== selected).slice(0, 2).map((theme) => {
+                const idx = themes.findIndex((t) => t.name === theme.name);
                 return (
                   <motion.div key={colors[idx]} className="cursor-pointer opacity-50 hover:opacity-80 transition-opacity" onClick={() => setSelected(idx)}>
                     <MockupUI color={colors[idx]} label={theme.label} />

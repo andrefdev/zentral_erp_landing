@@ -4,15 +4,7 @@ import { SectionNumber } from "@/components/scroll-reveal";
 import { SplitWords } from "@/components/animations/split-text";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-
-interface RoadmapDict {
-  title: string;
-  sprints: {
-    date: string;
-    label: string;
-    features: string[];
-  }[];
-}
+import { useTranslations } from "next-intl";
 
 function TimelineDot({ index }: { index: number }) {
   return (
@@ -29,7 +21,13 @@ function TimelineDot({ index }: { index: number }) {
   );
 }
 
-export function Roadmap({ dict }: { dict: RoadmapDict }) {
+export function Roadmap() {
+  const t = useTranslations("roadmap");
+  const sprints = t.raw("sprints") as {
+    date: string;
+    label: string;
+    features: string[];
+  }[];
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start end", "end start"] });
   const lineHeight = useTransform(scrollYProgress, [0.1, 0.8], ["0%", "100%"]);
@@ -38,14 +36,14 @@ export function Roadmap({ dict }: { dict: RoadmapDict }) {
     <section id="roadmap" className="bg-black py-32 lg:py-40 px-6">
       <div className="max-w-[1200px] mx-auto">
         <SectionNumber number="07" />
-        <SplitWords text={dict.title} className="text-[28px] sm:text-[36px] lg:text-[40px] font-medium text-white leading-[1.15] tracking-[-0.015em] max-w-3xl mb-16" />
+        <SplitWords text={t("title")} className="text-[28px] sm:text-[36px] lg:text-[40px] font-medium text-white leading-[1.15] tracking-[-0.015em] max-w-3xl mb-16" />
 
         <div ref={containerRef} className="relative">
           <div className="absolute left-[7px] lg:left-[140px] top-0 bottom-0 w-px bg-[#1A1A1A]" />
           <motion.div className="absolute left-[7px] lg:left-[140px] top-0 w-px bg-gradient-to-b from-[#9333EA] to-[#06B6D4] origin-top" style={{ height: lineHeight }} />
 
           <div className="flex flex-col gap-12 lg:gap-16">
-            {dict.sprints.map((sprint, i) => (
+            {sprints.map((sprint, i) => (
               <motion.div key={sprint.label} initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }} className="relative flex flex-col lg:flex-row gap-4 lg:gap-12">
                 <div className="lg:w-[140px] flex items-start gap-4 lg:block">
                   <TimelineDot index={i} />

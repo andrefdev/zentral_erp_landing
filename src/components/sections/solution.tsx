@@ -8,26 +8,22 @@ import {
   Users, CheckSquare, FileText, Package,
   Calculator, Brain, FolderOpen, Wallet,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const icons = [Users, CheckSquare, FileText, FolderOpen, Package, Calculator, Brain, Wallet];
 const statuses = ["available", "available", "available", "available", "available", "coming", "coming", "coming"] as const;
 
-interface SolutionDict {
-  title: string;
-  subtitle: string;
-  available: string;
-  coming: string;
-  modules: { name: string; description: string }[];
-}
+export function Solution() {
+  const t = useTranslations("solution");
+  const modules = t.raw("modules") as { name: string; description: string }[];
 
-export function Solution({ dict }: { dict: SolutionDict }) {
   return (
     <section id="solucion" className="bg-black py-32 lg:py-40 px-6">
       <div className="max-w-[1200px] mx-auto">
         <SectionNumber number="03" />
 
         <SplitWords
-          text={dict.title}
+          text={t("title")}
           className="text-[28px] sm:text-[36px] lg:text-[40px] font-medium text-white leading-[1.15] tracking-[-0.015em] max-w-3xl mb-4"
         />
 
@@ -38,11 +34,11 @@ export function Solution({ dict }: { dict: SolutionDict }) {
           transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="text-lg text-[#A3A3A3] leading-relaxed max-w-2xl mb-16"
         >
-          {dict.subtitle}
+          {t("subtitle")}
         </motion.p>
 
         <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {dict.modules.map((mod, i) => {
+          {modules.map((mod, i) => {
             const Icon = icons[i];
             const status = statuses[i];
             return (
@@ -61,7 +57,7 @@ export function Solution({ dict }: { dict: SolutionDict }) {
                           : "text-[#9333EA] bg-[#9333EA]/10"
                       }`}
                     >
-                      {status === "available" ? dict.available : dict.coming}
+                      {status === "available" ? t("available") : t("coming")}
                     </span>
                   </div>
                   <h3 className="text-white font-medium text-base mb-1.5">{mod.name}</h3>

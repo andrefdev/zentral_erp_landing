@@ -3,28 +3,25 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations, useLocale } from "next-intl";
+import Image from "next/image";
+import logo from "@/assets/logo.png";
 
-interface NavDict {
-  product: string;
-  pricing: string;
-  comparison: string;
-  roadmap: string;
-  cta: string;
-}
-
-export function Navbar({ dict, lang }: { dict: NavDict; lang: string }) {
+export function Navbar() {
+  const t = useTranslations("nav");
+  const locale = useLocale();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navLinks = [
-    { label: dict.product, href: "#solucion" },
-    { label: dict.pricing, href: "#precios" },
-    { label: dict.comparison, href: "#comparativa" },
-    { label: dict.roadmap, href: "#roadmap" },
+    { label: t("product"), href: "#solucion" },
+    { label: t("pricing"), href: "#precios" },
+    { label: t("comparison"), href: "#comparativa" },
+    { label: t("roadmap"), href: "#roadmap" },
   ];
 
-  const otherLang = lang === "es" ? "en" : "es";
-  const otherLangLabel = lang === "es" ? "EN" : "ES";
+  const otherLang = locale === "es" ? "en" : "es";
+  const otherLangLabel = locale === "es" ? "EN" : "ES";
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -45,10 +42,14 @@ export function Navbar({ dict, lang }: { dict: NavDict; lang: string }) {
     >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <a href={`/${lang}`} className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-              <span className="text-black font-bold text-sm">Z</span>
-            </div>
+          <a href={`/${locale}`} className="flex items-center gap-3">
+            <Image
+              src={logo}
+              alt="Zentral"
+              width={32}
+              height={32}
+              className="rounded-lg"
+            />
             <span className="text-white font-semibold text-lg tracking-tight hidden sm:block">
               Zentral
             </span>
@@ -81,7 +82,7 @@ export function Navbar({ dict, lang }: { dict: NavDict; lang: string }) {
               href="#precios"
               className="bg-white text-black text-sm font-medium px-5 py-2 rounded-lg hover:bg-[#9333EA] hover:text-white transition-all duration-300"
             >
-              {dict.cta}
+              {t("cta")}
             </a>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}

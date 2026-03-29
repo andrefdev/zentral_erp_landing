@@ -107,14 +107,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html className={`${dmSans.variable} h-full antialiased`} suppressHydrationWarning>
-      <head>
-        <link rel="alternate" hrefLang="es" href={`${BASE_URL}/es`} />
-        <link rel="alternate" hrefLang="en" href={`${BASE_URL}/en`} />
-        <link rel="alternate" hrefLang="x-default" href={`${BASE_URL}/es`} />
-      </head>
-      <body className="min-h-full flex flex-col">{children}</body>
-    </html>
-  );
+  return children;
 }
