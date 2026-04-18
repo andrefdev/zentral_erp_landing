@@ -5,6 +5,8 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { DM_Sans } from "next/font/google";
 import { routing } from "@/i18n/routing";
+import { SmoothScroll } from "@/components/site/smooth-scroll";
+import { ScrollProgress } from "@/components/site/scroll-progress";
 
 const dmSans = DM_Sans({
   variable: "--font-sans",
@@ -39,8 +41,10 @@ export default async function LocaleLayout({
         <link rel="alternate" hrefLang="en" href="https://zentral.indrox.com/en" />
         <link rel="alternate" hrefLang="x-default" href="https://zentral.indrox.com/es" />
       </head>
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full">
         <NextIntlClientProvider messages={messages}>
+          <SmoothScroll />
+          <ScrollProgress />
           {children}
         </NextIntlClientProvider>
       </body>
