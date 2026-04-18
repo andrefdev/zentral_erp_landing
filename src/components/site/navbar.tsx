@@ -93,7 +93,7 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <a href="https://indrox.com/es/contact" className="btn-primary">Empieza gratis</a>
+            <a href="https://indrox.com/es/contact" className="btn-primary hidden md:inline-flex">Empieza gratis</a>
             <button
               className="md:hidden text-white"
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -218,6 +218,7 @@ export function Navbar() {
             <Link href={L("/precios")} className="block py-2 font-medium">Precios</Link>
             <Link href={L("/comparativa")} className="block py-2 font-medium">Comparativa</Link>
             <Link href={L("/recursos")} className="block py-2 font-medium">Recursos</Link>
+            <a href="https://indrox.com/es/contact" className="btn-primary w-full justify-center mt-2">Empieza gratis</a>
           </div>
         </div>
       )}

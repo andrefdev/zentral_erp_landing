@@ -91,7 +91,7 @@ export default async function Home({
                   <span className="w-3 h-3 rounded-full bg-[#28C840]" />
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 border-t border-[#262626] pt-12">
-                  <div className="p-6 md:p-8 border-r border-[#262626]">
+                  <div className="p-6 md:p-8 md:border-r border-[#262626]">
                     <div className="text-xs text-[#888] mb-2">PIPELINE CRM</div>
                     <div className="font-display text-lg mb-4">Deal · Consultora Andina</div>
                     <div className="space-y-2 text-sm">
