@@ -156,5 +156,180 @@
       "legal": ["Privacy", "Terms", "SLA"]
     },
     "copyright": "All rights reserved."
+  },
+  "waitlistCount": {
+    "loading": "Loading…",
+    "label": "already on the waitlist",
+    "labelEmpty": "Be one of the first on the waitlist"
+  },
+  "waitlist": {
+    "metaTitle": "Join the Zentral pre-launch · Reserve your spot",
+    "metaDescription": "Tell us about your company in 60 seconds and reserve priority access to Zentral Suite. We reply within 48 hours.",
+    "nav": { "exit": "Exit" },
+    "bottom": {
+      "step": "Step",
+      "of": "of",
+      "enter": "Enter",
+      "enterAction": "to continue",
+      "back": "Back",
+      "next": "Next"
+    },
+    "welcome": {
+      "pill": "PRE-LAUNCH · COHORT 01",
+      "h1Pre": "Before we start,",
+      "h1Grad": "tell us about your company.",
+      "sub": "7 questions. 60 seconds. We'll reply within 48 hours with priority access to Zentral Suite.",
+      "cta": "Start",
+      "meta": "APRIL 2026 · LIMA · ZENTRAL.INDROX.COM",
+      "countLine": "Already on the waitlist:"
+    },
+    "questions": {
+      "company-size": {
+        "eyebrow": "01 · SIZE",
+        "titlePre": "How many people",
+        "titleGrad": "work at your company",
+        "titlePost": "today?",
+        "help": "Count everyone who touches an operational system.",
+        "options": {
+          "solo":   "Just me · founder / freelancer",
+          "micro":  "2 – 5 people",
+          "small":  "6 – 20 people",
+          "medium": "21 – 50 people",
+          "large":  "51+ people"
+        }
+      },
+      "operations": {
+        "eyebrow": "02 · HOW YOU OPERATE",
+        "titlePre": "When your team operates,",
+        "titleGrad": "what tools",
+        "titlePost": "do you use today?",
+        "help": "Closest to your reality — not the idealized version.",
+        "options": {
+          "odoo-sap":      "Odoo, SAP or another traditional ERP",
+          "specialized":   "Vertical accounting/ERP software (QuickBooks, Defontana, etc.)",
+          "spreadsheets":  "Shared Excel and Google Sheets",
+          "whatsapp-drive":"WhatsApp + Drive · no central system",
+          "nothing":       "Nothing structured · everyone improvises"
+        }
+      },
+      "monthly-invoices": {
+        "eyebrow": "03 · VOLUME",
+        "titlePre": "How many",
+        "titleGrad": "invoices or receipts",
+        "titlePost": "do you issue per month?",
+        "help": "Approximate — invoices, receipts and credit notes combined.",
+        "unit": "documents / month"
+      },
+      "current-tools": {
+        "eyebrow": "04 · CURRENT STACK",
+        "titlePre": "What do you use today",
+        "titleGrad": "to run the day-to-day",
+        "titlePost": "?",
+        "help": "Check all that apply. No judgment.",
+        "options": {
+          "excel":      "Excel · Google Sheets",
+          "whatsapp":   "WhatsApp Business",
+          "drive":      "Google Drive · Dropbox",
+          "crm":        "CRM (HubSpot · Pipedrive · Salesforce · Zoho)",
+          "erp":        "ERP (Odoo · SAP · Defontana · NetSuite)",
+          "accounting": "Accounting or e-invoicing software",
+          "nothing":    "Nothing structured"
+        }
+      },
+      "biggest-pain": {
+        "eyebrow": "05 · MAIN PAIN",
+        "titlePre": "What's",
+        "titleGrad": "your biggest friction",
+        "titlePost": "running the business?",
+        "help": "Just one — the one that burns you most every month.",
+        "options": {
+          "data-entry":     "My team loses hours on data entry and copy-paste",
+          "lost-leads":     "Leads get lost between WhatsApp, IG and LinkedIn",
+          "no-visibility":  "I have no real visibility of operations · sales",
+          "sunat":          "E-invoicing and tax reconciliation eat my time",
+          "tools-broken":   "I have 5 tools and none of them talk to each other"
+        }
+      },
+      "budget": {
+        "eyebrow": "06 · WILLINGNESS TO INVEST",
+        "titlePre": "If this fixed everything,",
+        "titleGrad": "how much would you pay per month",
+        "titlePost": "for your company?",
+        "help": "Total monthly — not per user. Honest. Doesn't affect your access.",
+        "options": {
+          "free":  "Only if it's free",
+          "50":    "Up to USD $50 / month",
+          "100":   "USD $50 – $100 / month",
+          "200":   "USD $100 – $200 / month",
+          "300":   "USD $200+ / month — worth it"
+        }
+      },
+      "priority-module": {
+        "eyebrow": "07 · WHERE TO START",
+        "titlePre": "What do you",
+        "titleGrad": "need first",
+        "titlePost": "?",
+        "help": "Start with one; activate the rest when you need them.",
+        "options": {
+          "erp":     { "name": "Zentral ERP",     "meta": "Ops · HR · Stock · Finance" },
+          "crm":     { "name": "Zentral CRM",     "meta": "Capture · Pipeline · Outreach · AI" },
+          "suite":   { "name": "Zentral Suite",   "meta": "ERP + CRM in one login" },
+          "finance": { "name": "Zentral Finance", "meta": "Tax · close · reconciliation" }
+        }
+      }
+    },
+    "capture": {
+      "eyebrow": "FINAL · 30 SECONDS",
+      "titlePre": "Done. We just need",
+      "titleGrad": "your details",
+      "titlePost": ".",
+      "help": "We'll send your invite within 48 hours. No spam — max 1 email a week.",
+      "labels": { "name": "YOUR NAME", "email": "WORK EMAIL", "role": "ROLE · COMPANY (OPTIONAL)" },
+      "placeholders": {
+        "name": "Mariana Vela",
+        "email": "mariana@company.com",
+        "role": "CEO at Andina Co. — optional"
+      },
+      "cta": "Reserve my spot",
+      "submitting": "Reserving…",
+      "errors": {
+        "name": "We need your name.",
+        "email": "Invalid email.",
+        "submit": "Something failed. Try again in a moment."
+      }
+    },
+    "thanks": {
+      "verdict": {
+        "high": {
+          "chip": "★ HIGH PRIORITY · INVITE IN 24H",
+          "h1Pre": "Perfect fit.",
+          "h1Grad": "See you in the beta.",
+          "sub": "Your profile is in the first batch. We'll reach out within 24 hours with dedicated onboarding and 25% off your first year."
+        },
+        "mid": {
+          "chip": "✦ STRONG FIT · INVITE IN 48H",
+          "h1Pre": "You fit well.",
+          "h1Grad": "We'll be in touch.",
+          "sub": "Your profile is in the second batch. We'll reach out within 48 hours with your beta access and a proposal tailored to your company."
+        },
+        "fit": {
+          "chip": "◉ ON THE LIST · ROLLING INVITE",
+          "h1Pre": "You're in.",
+          "h1Grad": "We go in order.",
+          "sub": "We'll invite you as we open cohorts. Meanwhile we'll send case studies and the migration guide so you arrive with context."
+        }
+      },
+      "summary": {
+        "position": "POSITION",
+        "cohort": "COHORT",
+        "module": "PRIORITY MODULE",
+        "eta": "ESTIMATED INVITE",
+        "email": "EMAIL"
+      },
+      "meta": "© 2026 · LIMA · ZENTRAL · INDROX",
+      "ctaCommunity": "Visit Zentral",
+      "ctaCommunityHref": "https://zentral.indrox.com",
+      "ctaShare": "Invite a colleague"
+    }
   }
 }

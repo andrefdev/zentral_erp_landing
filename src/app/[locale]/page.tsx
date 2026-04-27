@@ -14,6 +14,8 @@ import { VerticalsTabs } from "@/components/site/verticals-tabs";
 import { DemoButton } from "@/components/site/demo-modal";
 import { Reveal } from "@/components/site/reveal";
 import { StructuredData } from "@/components/structured-data";
+import { WaitlistCount } from "@/components/site/waitlist-count";
+import { getWaitlistCount } from "@/lib/resend";
 
 const FAQ_ITEMS = [
   { q: "¿Puedo migrar mis datos desde Defontana, Excel o HubSpot?", a: "Sí. Tenemos importadores oficiales para Defontana, CSV de Excel, HubSpot y Pipedrive. El equipo de onboarding hace la migración durante las primeras 2 semanas sin costo adicional." },
@@ -53,6 +55,9 @@ export default async function Home({
   setRequestLocale(locale);
   const L = (p: string) => `/${locale}${p === "/" ? "" : p}`;
 
+  let initialWaitlistCount = 0;
+  try { initialWaitlistCount = await getWaitlistCount(); } catch { initialWaitlistCount = 0; }
+
   return (
     <>
       <StructuredData />
@@ -81,6 +86,9 @@ export default async function Home({
                 <DemoButton />
               </div>
               <p className="text-xs text-[#888] mt-6">Sin tarjeta de crédito. Listo en 5 minutos. USD $199/mes para 10 usuarios.</p>
+              <div className="flex justify-center">
+                <WaitlistCount initialCount={initialWaitlistCount} />
+              </div>
             </Reveal>
 
             <Reveal className="mt-16 md:mt-20 max-w-5xl mx-auto" delay={0.15} y={20}>
