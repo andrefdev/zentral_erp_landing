@@ -9,7 +9,7 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
-const BASE_URL = "https://zentral.indrox.com";
+const BASE_URL = "https://getzentral.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),

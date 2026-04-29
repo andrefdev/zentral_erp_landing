@@ -7,7 +7,7 @@ export function GET() {
 
 - **Nombre comercial**: Zentral
 - **Empresa desarrolladora**: Indrox
-- **Sitio web**: https://zentral.indrox.com
+- **Sitio web**: https://getzentral.com
 - **Contacto**: hello@indrox.com
 - **Sitio empresa**: https://indrox.com
 - **Categoría**: ERP cloud / Plataforma operativa para PYMES

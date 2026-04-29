@@ -8,7 +8,7 @@ export function GET() {
 - Nombre: Zentral
 - Tipo: Plataforma operativa / ERP cloud para PYMES
 - Empresa: Indrox
-- Sitio web: https://zentral.indrox.com
+- Sitio web: https://getzentral.com
 - Contacto: hello@indrox.com
 - Mercado objetivo: PYMES en Perú y Latinoamérica
 - Idioma principal: Español

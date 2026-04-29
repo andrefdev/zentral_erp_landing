@@ -19,7 +19,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'waitlist' });
-  const baseUrl = 'https://zentral.indrox.com';
+  const baseUrl = 'https://getzentral.com';
   return {
     title: t('metaTitle'),
     description: t('metaDescription'),

@@ -1,4 +1,4 @@
-const BASE_URL = "https://zentral.indrox.com";
+const BASE_URL = "https://getzentral.com";
 
 function JsonLd({ data }: { data: Record<string, unknown> }) {
   return (

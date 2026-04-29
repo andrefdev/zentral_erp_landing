@@ -177,7 +177,7 @@ export function userWelcomeHtml(args: { name: string; locale: string; verdict: V
 
         <!-- CTA -->
         <div style="margin:8px 0 28px;">
-          <a href="https://zentral.indrox.com" style="display:inline-block;background:#9333EA;color:#FFFFFF;text-decoration:none;padding:15px 28px;border-radius:10px;font-weight:600;font-size:15px;letter-spacing:-0.01em;box-shadow:0 12px 28px -10px rgba(147,51,234,0.45);">${escape(t.cta)} →</a>
+          <a href="https://getzentral.com" style="display:inline-block;background:#9333EA;color:#FFFFFF;text-decoration:none;padding:15px 28px;border-radius:10px;font-weight:600;font-size:15px;letter-spacing:-0.01em;box-shadow:0 12px 28px -10px rgba(147,51,234,0.45);">${escape(t.cta)} →</a>
         </div>
 
         <!-- Closer -->

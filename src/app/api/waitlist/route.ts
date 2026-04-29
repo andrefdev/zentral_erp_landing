@@ -84,7 +84,7 @@ export async function POST(req: NextRequest) {
   let position = 0;
   try { position = await getWaitlistCount(); } catch { position = 0; }
 
-  const from = process.env.RESEND_FROM ?? 'Zentral <noreply@zentral.indrox.com>';
+  const from = process.env.RESEND_FROM ?? 'Zentral <noreply@getzentral.com>';
   const adminTo = process.env.WAITLIST_NOTIFY_EMAIL ?? 'admin@indrox.com';
   const subjectAdmin = `[zentral-waitlist] ${name} · ${verdict.toUpperCase()} · #${position}`;
   const subjectUser = locale === 'es'

@@ -37,9 +37,9 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${dmSans.variable} h-full antialiased`} suppressHydrationWarning>
       <head>
-        <link rel="alternate" hrefLang="es" href="https://zentral.indrox.com/es" />
-        <link rel="alternate" hrefLang="en" href="https://zentral.indrox.com/en" />
-        <link rel="alternate" hrefLang="x-default" href="https://zentral.indrox.com/es" />
+        <link rel="alternate" hrefLang="es" href="https://getzentral.com/es" />
+        <link rel="alternate" hrefLang="en" href="https://getzentral.com/en" />
+        <link rel="alternate" hrefLang="x-default" href="https://getzentral.com/es" />
       </head>
       <body className="min-h-full">
         <NextIntlClientProvider messages={messages}>
