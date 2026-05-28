@@ -4,9 +4,9 @@ export const site = {
   tagline: "El ERP que trabaja por ti.",
   description:
     "ERP modular con IA nativa para empresas latinoamericanas. Centraliza ventas, personal, tesorería, tareas y más en una sola plataforma.",
-  email: "hola@zentral.io",
+  email: "hola@zentral.so",
   whatsapp: "#",
-  demoUrl: "#cta",
+  demoUrl: "https://indrox.com/contact",
 } as const;
 
 export const nav = {
@@ -15,10 +15,8 @@ export const nav = {
     { href: "#precios", label: "Precios" },
     { href: "#casos", label: "Casos" },
   ],
-  loginHref: "#",
-  ctaHref: "#cta",
+  ctaHref: "https://indrox.com/contact",
   ctaLabel: "Agendar demo",
-  loginLabel: "Iniciar sesión",
 } as const;
 
 export const customers = [

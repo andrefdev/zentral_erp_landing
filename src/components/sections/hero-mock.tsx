@@ -37,7 +37,7 @@ export function HeroMock() {
       <div className="mock">
         <div className="mock-chrome">
           <div className="mock-dots"><span /><span /><span /></div>
-          <div className="mock-url">app.zentral.io / dashboard</div>
+          <div className="mock-url">erp.zentral.so / dashboard</div>
           <div style={{ width: 48 }} />
         </div>
         <div className="mock-body">

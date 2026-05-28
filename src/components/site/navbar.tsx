@@ -35,8 +35,7 @@ export function Navbar() {
             ))}
           </ul>
           <div className="nav-cta">
-            <a className="btn btn--ghost" href={nav.loginHref} style={{ borderColor: "transparent" }}>{nav.loginLabel}</a>
-            <a className="btn btn--primary" href={nav.ctaHref}>{nav.ctaLabel}</a>
+            <a className="btn btn--primary" href={nav.ctaHref} target="_blank" rel="noopener noreferrer">{nav.ctaLabel}</a>
           </div>
           <button
             className="hamburger"
@@ -65,8 +64,7 @@ export function Navbar() {
           ))}
         </ul>
         <div className="mob-drawer-cta">
-          <a className="btn btn--ghost" href={nav.loginHref} style={{ justifyContent: "center" }}>{nav.loginLabel}</a>
-          <a className="btn btn--primary" href={nav.ctaHref} style={{ justifyContent: "center" }}>{nav.ctaLabel}</a>
+          <a className="btn btn--primary" href={nav.ctaHref} target="_blank" rel="noopener noreferrer" style={{ justifyContent: "center" }}>{nav.ctaLabel}</a>
         </div>
       </aside>
     </>

@@ -1,5 +1,6 @@
-import { ArrowRight, ArrowDown } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { HeroMock } from "./hero-mock";
+import { Waitlist } from "./waitlist";
 
 export function Hero() {
   return (
@@ -14,12 +15,13 @@ export function Hero() {
           <p className="hero-sub">
             Más rápido de implementar que SAP. Más moderno que Odoo. Hecho a medida para tu operación real.
           </p>
+          <Waitlist />
           <div className="hero-cta">
-            <a className="btn btn--primary btn--lg" href="#cta">
-              Agendar demo gratis <ArrowRight size={16} />
-            </a>
             <a className="btn btn--ghost btn--lg" href="#solucion">
               Ver cómo funciona <ArrowDown size={16} />
+            </a>
+            <a className="btn btn--ghost btn--lg" href="https://indrox.com/contact" target="_blank" rel="noopener noreferrer">
+              Agendar demo
             </a>
           </div>
           <div className="hero-trust">

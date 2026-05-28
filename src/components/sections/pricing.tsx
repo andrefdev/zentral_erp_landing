@@ -28,7 +28,12 @@ export function Pricing() {
                     <li key={f}><Check size={14} />{f}</li>
                   ))}
                 </ul>
-                <a className={`btn ${p.ctaVariant === "primary" ? "btn--primary" : "btn--ghost"}`} href="#cta">
+                <a
+                  className={`btn ${p.ctaVariant === "primary" ? "btn--primary" : "btn--ghost"}`}
+                  href="https://indrox.com/contact"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {p.cta}
                 </a>
               </article>
