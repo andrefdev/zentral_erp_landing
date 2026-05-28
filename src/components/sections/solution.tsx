@@ -1,72 +1,84 @@
 "use client";
 
-import { SectionNumber } from "@/components/scroll-reveal";
-import { SplitWords } from "@/components/animations/split-text";
-import { StaggerContainer, StaggerItem } from "@/components/animations/stagger-children";
-import { motion } from "framer-motion";
-import {
-  Users, CheckSquare, FileText, Package,
-  Calculator, Brain, FolderOpen, Wallet,
-} from "lucide-react";
-import { useTranslations } from "next-intl";
-
-const icons = [Users, CheckSquare, FileText, FolderOpen, Package, Calculator, Brain, Wallet];
-const statuses = ["available", "available", "available", "available", "available", "coming", "coming", "coming"] as const;
+import { useState } from "react";
+import { ArrowRight, Check, UserCheck } from "lucide-react";
+import { solutions } from "@/config/solutions";
 
 export function Solution() {
-  const t = useTranslations("solution");
-  const modules = t.raw("modules") as { name: string; description: string }[];
+  const [activeId, setActiveId] = useState(solutions[0].id);
 
   return (
-    <section id="solucion" className="bg-black py-32 lg:py-40 px-6">
-      <div className="max-w-[1200px] mx-auto">
-        <SectionNumber number="03" />
+    <section className="section" id="solucion">
+      <div className="wrap">
+        <div className="section-head">
+          <span className="eyebrow plain">La suite</span>
+          <h2 className="h2 h2--lg">Una suite empresarial, 8 soluciones.</h2>
+          <p className="h2-sub">
+            Cada solución resuelve un área completa del negocio, con su propio comprador y propuesta de valor.
+            Cómpralas por separado o como suite — entra pequeño, crece grande.
+          </p>
+        </div>
 
-        <SplitWords
-          text={t("title")}
-          className="text-[28px] sm:text-[36px] lg:text-[40px] font-medium text-white leading-[1.15] tracking-[-0.015em] max-w-3xl mb-4"
-        />
+        <div className="sol-explorer">
+          <div className="sol-list" role="tablist" aria-label="Soluciones Zentral">
+            {solutions.map((s) => {
+              const Icon = s.icon;
+              const active = s.id === activeId;
+              return (
+                <button
+                  key={s.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={active}
+                  aria-controls={s.id}
+                  className={`sol-item ${active ? "is-active" : ""}`}
+                  onClick={() => setActiveId(s.id)}
+                >
+                  <span className="sol-item-icon"><Icon size={18} /></span>
+                  <span className="sol-item-text">
+                    <span className="sol-item-name">{s.name} {s.highlight}</span>
+                    <span className="sol-item-tag">{s.tag}</span>
+                  </span>
+                  <ArrowRight size={14} className="sol-item-arrow" />
+                </button>
+              );
+            })}
+          </div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="text-lg text-[#A3A3A3] leading-relaxed max-w-2xl mb-16"
-        >
-          {t("subtitle")}
-        </motion.p>
-
-        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {modules.map((mod, i) => {
-            const Icon = icons[i];
-            const status = statuses[i];
-            return (
-              <StaggerItem key={mod.name}>
-                <div className="group bg-[#1A1A1A] border border-[#262626] rounded-xl p-6 h-full cursor-default hover:border-[#9333EA] hover:-translate-y-1 transition-all duration-300">
-                  <div className="flex items-start justify-between mb-4">
-                    <Icon
-                      className="text-[#A3A3A3] group-hover:text-[#9333EA] transition-colors duration-300"
-                      size={22}
-                      strokeWidth={1.5}
-                    />
-                    <span
-                      className={`text-[11px] font-medium tracking-wider uppercase px-2.5 py-1 rounded-full ${
-                        status === "available"
-                          ? "text-emerald-400 bg-emerald-400/10"
-                          : "text-[#9333EA] bg-[#9333EA]/10"
-                      }`}
-                    >
-                      {status === "available" ? t("available") : t("coming")}
-                    </span>
+          <div className="sol-panes">
+            {solutions.map((s) => {
+              const Icon = s.icon;
+              const active = s.id === activeId;
+              return (
+                <div
+                  key={s.id}
+                  id={s.id}
+                  role="tabpanel"
+                  aria-hidden={!active}
+                  className={`sol-pane ${active ? "is-active" : ""}`}
+                >
+                  <div className="sol-pane-head">
+                    <div className="sol-pane-icon"><Icon size={24} /></div>
+                    <div>
+                      <div className="sol-pane-code">{s.code} · {s.submodules.length} submódulos</div>
+                      <h3 className="sol-pane-name">{s.name} <em>{s.highlight}</em></h3>
+                    </div>
                   </div>
-                  <h3 className="text-white font-medium text-base mb-1.5">{mod.name}</h3>
-                  <p className="text-[#A3A3A3] text-sm leading-relaxed">{mod.description}</p>
+                  <p className="sol-pane-tagline">{s.tagline}</p>
+                  <div className="sol-pane-sub-h">Submódulos incluidos</div>
+                  <ul className="sol-pane-subs">
+                    {s.submodules.map((sub) => (
+                      <li key={sub}><Check size={14} />{sub}</li>
+                    ))}
+                  </ul>
+                  <span className="sol-pane-buyer">
+                    <UserCheck size={14} />Comprador objetivo · {s.buyer}
+                  </span>
                 </div>
-              </StaggerItem>
-            );
-          })}
-        </StaggerContainer>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </section>
   );

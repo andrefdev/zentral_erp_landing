@@ -1,98 +1,35 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
-import { SplitWords } from "@/components/animations/split-text";
-import { useTranslations } from "next-intl";
+import { ArrowRight, ArrowDown } from "lucide-react";
+import { HeroMock } from "./hero-mock";
 
 export function Hero() {
-  const t = useTranslations("hero");
-
   return (
-    <section
-      id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center bg-black px-6 overflow-hidden"
-    >
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(147,51,234,0.08)_0%,_transparent_70%)]" />
-
-      <div className="max-w-4xl mx-auto text-center relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <span className="inline-block text-xs font-medium tracking-[3px] uppercase text-[#A3A3A3] border border-[#262626] rounded-full px-5 py-2 mb-8">
-            {t("badge")}
-          </span>
-        </motion.div>
-
-        <div className="mb-6">
-          <SplitWords
-            text={t("title1")}
-            as="h1"
-            className="text-[32px] sm:text-[40px] md:text-[56px] lg:text-[64px] font-medium text-white leading-[1.1] tracking-[-0.02em]"
-            delay={0.15}
-          />
-          <SplitWords
-            text={t("title2")}
-            as="span"
-            className="text-[32px] sm:text-[40px] md:text-[56px] lg:text-[64px] font-medium text-white leading-[1.1] tracking-[-0.02em] block"
-            delay={0.4}
-          />
+    <section className="hero" id="top">
+      <div className="hero-inner">
+        <div className="hero-copy">
+          <span className="eyebrow"><span className="pulse" />Suite empresarial con IA para LATAM</span>
+          <h1 className="hero-h">
+            El ERP que <span className="hi">trabaja</span>
+            <br />por ti.
+          </h1>
+          <p className="hero-sub">
+            Más rápido de implementar que SAP. Más moderno que Odoo. Hecho a medida para tu operación real.
+          </p>
+          <div className="hero-cta">
+            <a className="btn btn--primary btn--lg" href="#cta">
+              Agendar demo gratis <ArrowRight size={16} />
+            </a>
+            <a className="btn btn--ghost btn--lg" href="#solucion">
+              Ver cómo funciona <ArrowDown size={16} />
+            </a>
+          </div>
+          <div className="hero-trust">
+            <span>Sin permanencia</span><span className="dot" />
+            <span>Implementación en 3 semanas</span><span className="dot" />
+            <span>Soporte en español</span>
+          </div>
         </div>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="text-base sm:text-lg text-[#A3A3A3] leading-relaxed max-w-2xl mx-auto mb-10"
-        >
-          {t("subtitle")}
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6"
-        >
-          <a
-            href="#precios"
-            className="bg-white text-black font-medium px-8 py-3.5 rounded-lg text-base hover:bg-[#9333EA] hover:text-white transition-all duration-300 w-full sm:w-auto text-center"
-          >
-            {t("cta1")}
-          </a>
-          <a
-            href="#solucion"
-            className="border border-[#262626] text-white font-medium px-8 py-3.5 rounded-lg text-base hover:border-[#9333EA] hover:text-[#9333EA] transition-all duration-300 w-full sm:w-auto text-center"
-          >
-            {t("cta2")}
-          </a>
-        </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1.1 }}
-          className="text-[13px] text-[#737373]"
-        >
-          {t("microcopy")}
-        </motion.p>
+        <HeroMock />
       </div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 1.5 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <ChevronDown className="text-[#737373]" size={24} />
-        </motion.div>
-      </motion.div>
     </section>
   );
 }
