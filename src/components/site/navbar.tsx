@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { motion } from "framer-motion";
 import { nav } from "@/config/site";
 
 function Logo() {
@@ -27,7 +28,11 @@ export function Navbar() {
   return (
     <>
       <nav className={`nav ${stuck ? "is-stuck" : ""}`} aria-label="Principal">
-        <div className="nav-inner">
+        <motion.div
+          className="nav-inner"
+          layout
+          transition={{ type: "spring", stiffness: 280, damping: 32, mass: 0.9 }}
+        >
           <Logo />
           <ul className="nav-links" role="list">
             {nav.links.map((l) => (
@@ -45,7 +50,7 @@ export function Navbar() {
           >
             <Menu size={18} />
           </button>
-        </div>
+        </motion.div>
       </nav>
 
       <div className={`mob-scrim ${open ? "is-open" : ""}`} onClick={() => setOpen(false)} aria-hidden />
