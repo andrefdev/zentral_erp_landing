@@ -1,11 +1,13 @@
-import { customers } from "@/config/site";
+import { getTranslations } from "next-intl/server";
 
-export function LogoBar() {
+export async function LogoBar() {
+  const t = await getTranslations("landing.logoBar");
+  const customers = t.raw("customers") as string[];
   const loop = [...customers, ...customers];
   return (
-    <section className="logobar" aria-label="Clientes">
+    <section className="logobar" aria-label={t("ariaLabel")}>
       <div className="logobar-inner">
-        <div className="logobar-label">Empresas que ya operan con Zentral</div>
+        <div className="logobar-label">{t("label")}</div>
         <div className="logobar-track">
           <div className="logobar-marquee">
             {loop.map((name, i) => (

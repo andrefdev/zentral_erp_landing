@@ -1,53 +1,20 @@
-import { site } from "@/config/site";
+import { getTranslations } from "next-intl/server";
 
-const cols = [
-  {
-    h: "Producto",
-    links: [
-      { label: "Las 8 soluciones", href: "#solucion" },
-      { label: "Precios", href: "#precios" },
-      { label: "Comparativas", href: "#comparativa" },
-      { label: "Casos", href: "#casos" },
-    ],
-  },
-  {
-    h: "Empresa",
-    links: [
-      { label: "Sobre Zentral", href: "#" },
-      { label: "Indrox", href: "#" },
-      { label: "Trabaja con nosotros", href: "#" },
-      { label: "Contacto", href: "#" },
-    ],
-  },
-  {
-    h: "Legal",
-    links: [
-      { label: "Términos", href: "#" },
-      { label: "Privacidad", href: "#" },
-      { label: "Seguridad", href: "#" },
-    ],
-  },
-  {
-    h: "Contacto",
-    links: [
-      { label: site.email, href: `mailto:${site.email}` },
-      { label: "WhatsApp", href: "#" },
-      { label: "LinkedIn", href: "#" },
-      { label: "Lima, Perú", href: "#" },
-    ],
-  },
-];
+type Col = { h: string; links: { label: string; href: string }[] };
 
-export function Footer(_props: { locale?: string } = {}) {
+export async function Footer(_props: { locale?: string } = {}) {
+  const t = await getTranslations("footerSite");
+  const cols = t.raw("cols") as Col[];
+
   return (
     <footer className="footer">
       <div className="footer-inner">
         <div className="footer-brand">
-          <a className="logo" href="#top" aria-label="Zentral · Inicio">
+          <a className="logo" href="#top" aria-label={t("ariaLogo")}>
             <span className="logo-mark" aria-hidden="true" />
             <span>zentral</span>
           </a>
-          <p>El ERP que trabaja por ti. Operación, IA y customización en un solo lugar.</p>
+          <p>{t("tagline")}</p>
         </div>
         <div className="footer-cols">
           {cols.map((c) => (
@@ -61,8 +28,8 @@ export function Footer(_props: { locale?: string } = {}) {
         </div>
       </div>
       <div className="footer-bottom">
-        <span>© 2025 Zentral · Un producto de Indrox</span>
-        <span>Hecho en Perú 🇵🇪</span>
+        <span>{t("copyright")}</span>
+        <span>{t("madeIn")}</span>
       </div>
     </footer>
   );

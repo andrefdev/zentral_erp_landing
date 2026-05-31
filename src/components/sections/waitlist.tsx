@@ -2,8 +2,10 @@
 
 import { useState, type FormEvent } from "react";
 import { ArrowRight, Check } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function Waitlist() {
+  const t = useTranslations("landing.waitlist");
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
@@ -17,7 +19,7 @@ export function Waitlist() {
     return (
       <div className="waitlist waitlist--success" role="status">
         <Check size={16} />
-        <span>¡Listo! Te avisaremos cuando esté disponible para tu empresa.</span>
+        <span>{t("successMsg")}</span>
       </div>
     );
   }
@@ -29,12 +31,12 @@ export function Waitlist() {
         required
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        placeholder="tu@empresa.com"
-        aria-label="Correo de trabajo"
+        placeholder={t("placeholder")}
+        aria-label={t("ariaInput")}
         className="waitlist-input"
       />
       <button type="submit" className="btn btn--primary waitlist-btn">
-        Unirme a la waitlist <ArrowRight size={16} />
+        {t("button")} <ArrowRight size={16} />
       </button>
     </form>
   );

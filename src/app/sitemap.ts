@@ -10,19 +10,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticPages = [
     { path: "", changeFrequency: "weekly" as const, priority: 1.0 },
-    { path: "/precios", changeFrequency: "weekly" as const, priority: 0.9 },
-    { path: "/comparativas", changeFrequency: "weekly" as const, priority: 0.9 },
-    { path: "/recursos", changeFrequency: "weekly" as const, priority: 0.7 },
+    { path: "/pricing", changeFrequency: "weekly" as const, priority: 0.9 },
+    { path: "/comparisons", changeFrequency: "weekly" as const, priority: 0.9 },
+    { path: "/resources", changeFrequency: "weekly" as const, priority: 0.7 },
+    { path: "/resources/blog", changeFrequency: "weekly" as const, priority: 0.7 },
+    { path: "/resources/cases", changeFrequency: "monthly" as const, priority: 0.7 },
+    { path: "/resources/docs", changeFrequency: "weekly" as const, priority: 0.6 },
+    { path: "/resources/changelog", changeFrequency: "weekly" as const, priority: 0.6 },
   ];
 
   const comparisonPages = slugs.map((slug) => ({
-    path: `/comparativas/${slug}`,
+    path: `/comparisons/${slug}`,
     changeFrequency: "monthly" as const,
     priority: 0.85,
   }));
 
   const alternativePages = slugs.map((slug) => ({
-    path: `/alternativas/${slug}`,
+    path: `/alternatives/${slug}`,
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));

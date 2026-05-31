@@ -17,24 +17,58 @@ const LEGACY_VS_MAP: Record<string, string> = {
   "vs-monday": "odoo",
 };
 
+const SECTION_MAP: Record<string, string> = {
+  comparativas: "comparisons",
+  alternativas: "alternatives",
+  precios: "pricing",
+  recursos: "resources",
+};
+
 const nextConfig: NextConfig = {
   async redirects() {
     const locales = ["es", "en"];
-    const legacy = Object.entries(LEGACY_VS_MAP).flatMap(([from, to]) =>
+
+    const legacyVs = Object.entries(LEGACY_VS_MAP).flatMap(([from, to]) =>
       locales.map((l) => ({
         source: `/${l}/${from}`,
-        destination: `/${l}/comparativas/${to}`,
+        destination: `/${l}/comparisons/${to}`,
+        permanent: true,
+      }))
+    );
+
+    const legacyComparativaSingular = locales.map((l) => ({
+      source: `/${l}/comparativa`,
+      destination: `/${l}/comparisons`,
+      permanent: true,
+    }));
+
+    const resourcesRenames = locales.flatMap((l) => [
+      { source: `/${l}/recursos/casos`, destination: `/${l}/resources/cases`, permanent: true },
+      { source: `/${l}/recursos/documentacion`, destination: `/${l}/resources/docs`, permanent: true },
+    ]);
+
+    const sectionChildren = Object.entries(SECTION_MAP).flatMap(([es, en]) =>
+      locales.map((l) => ({
+        source: `/${l}/${es}/:slug*`,
+        destination: `/${l}/${en}/:slug*`,
+        permanent: true,
+      }))
+    );
+
+    const sectionRoots = Object.entries(SECTION_MAP).flatMap(([es, en]) =>
+      locales.map((l) => ({
+        source: `/${l}/${es}`,
+        destination: `/${l}/${en}`,
         permanent: true,
       }))
     );
 
     return [
-      ...legacy,
-      {
-        source: "/:locale(es|en)/comparativa",
-        destination: "/:locale/comparativas",
-        permanent: true,
-      },
+      ...legacyVs,
+      ...legacyComparativaSingular,
+      ...resourcesRenames,
+      ...sectionChildren,
+      ...sectionRoots,
     ];
   },
 };

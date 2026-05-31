@@ -1,36 +1,53 @@
 import { ArrowRight } from "lucide-react";
-import { competitors, comparisonRows, comparisonChips, type Cell } from "@/config/comparison";
+import { getTranslations } from "next-intl/server";
 
-function cellFor(v: Cell | string, isMine: boolean) {
+type Cell = "yes" | "no" | "partial";
+type Chip = { label: string; href: string };
+
+const ROW_VALUES: Cell[][] = [
+  ["yes", "no", "no", "yes"],
+  ["yes", "no", "no", "no"],
+  ["yes", "partial", "partial", "no"],
+  ["yes", "partial", "no", "yes"],
+  ["yes", "partial", "no", "no"],
+  ["yes", "yes", "yes", "no"],
+];
+
+function cellFor(v: Cell, isMine: boolean, partialLabel: string) {
   const mine = isMine ? "mine " : "";
   if (v === "yes") return { cls: mine + "cmp-yes", text: "✓" };
   if (v === "no") return { cls: mine + "cmp-no", text: "✕" };
-  if (v === "partial") return { cls: mine + "cmp-partial", text: "Parcial" };
-  return { cls: mine, text: String(v) };
+  return { cls: mine + "cmp-partial", text: partialLabel };
 }
 
-export function Comparison() {
+export async function Comparison() {
+  const t = await getTranslations("landing.compare");
+  const competitors = t.raw("competitors") as string[];
+  const rows = t.raw("rows") as string[];
+  const chips = t.raw("chips") as Chip[];
+  const partial = t("partial");
+
   return (
     <section className="section section--ink" id="comparativa" style={{ borderTop: "1px solid rgba(250,250,246,.06)", paddingTop: 96 }}>
       <div className="wrap">
         <div className="section-head">
-          <span className="eyebrow plain">Comparativa</span>
-          <h2 className="h2">No tendrías que elegir entre simplicidad y potencia.</h2>
-          <p className="h2-sub">Con Zentral, tienes los dos.</p>
+          <span className="eyebrow plain">{t("eyebrow")}</span>
+          <h2 className="h2">{t("title")}</h2>
+          <p className="h2-sub">{t("subtitle")}</p>
         </div>
 
-        <div className="cmp-table" role="table" aria-label="Comparativa de ERPs">
+        <div className="cmp-table" role="table" aria-label={t("tableAria")}>
           <div className="cmp-row h" role="row">
-            <span className="cmp-feature" role="columnheader">Capacidad</span>
+            <span className="cmp-feature" role="columnheader">{t("capability")}</span>
             {competitors.map((c, i) => (
               <span key={c} className={i === 0 ? "mine" : ""} role="columnheader">{c}</span>
             ))}
           </div>
-          {comparisonRows.map((row) => (
-            <div className="cmp-row" role="row" key={row.feature}>
-              <span className="cmp-feature" role="cell">{row.feature}</span>
-              {row.values.map((v, i) => {
-                const c = cellFor(v, i === 0);
+          {rows.map((feature, ri) => (
+            <div className="cmp-row" role="row" key={feature}>
+              <span className="cmp-feature" role="cell">{feature}</span>
+              {(ROW_VALUES[ri] ?? []).map((v, i) => {
+                const c = cellFor(v, i === 0, partial);
                 return <span key={i} className={c.cls} role="cell">{c.text}</span>;
               })}
             </div>
@@ -38,7 +55,7 @@ export function Comparison() {
         </div>
 
         <div className="cmp-chips">
-          {comparisonChips.map((c) => (
+          {chips.map((c) => (
             <a className="cmp-chip" href={c.href} key={c.label}>
               {c.label} <ArrowRight size={14} />
             </a>

@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { getCompetitor, getCompetitorSlugs, ZENTRAL } from "@/lib/competitors";
+import { getCompetitor, getCompetitorSlugs, ZENTRAL, type Locale } from "@/lib/competitors";
 
 export const alt = "Zentral vs competidor";
 export const size = { width: 1200, height: 630 };
@@ -17,10 +17,10 @@ export default async function Image({
 }: {
   params: Promise<{ locale: string; competitor: string }>;
 }) {
-  const { competitor } = await params;
-  const c = getCompetitor(competitor);
-  const competitorName = c?.name ?? "Alternativa";
-  const tagline = c?.oneLiner ?? "Compara y decide.";
+  const { locale, competitor } = await params;
+  const c = getCompetitor(competitor, locale as Locale);
+  const competitorName = c?.name ?? (locale === "en" ? "Alternative" : "Alternativa");
+  const tagline = c?.oneLiner ?? (locale === "en" ? "Compare and decide." : "Compara y decide.");
 
   return new ImageResponse(
     (
@@ -55,7 +55,7 @@ export default async function Image({
               letterSpacing: 1,
             }}
           >
-            ZENTRAL · COMPARATIVA
+            {locale === "en" ? "ZENTRAL · COMPARISON" : "ZENTRAL · COMPARATIVA"}
           </div>
         </div>
 
@@ -101,7 +101,9 @@ export default async function Image({
         >
           <div style={{ display: "flex" }}>ERP + CRM + IA</div>
           <div style={{ display: "flex" }}>
-            {`USD $${ZENTRAL.priceFromUsd}/mes · 10 usuarios`}
+            {locale === "en"
+              ? `USD $${ZENTRAL.priceFromUsd}/mo · 10 users`
+              : `USD $${ZENTRAL.priceFromUsd}/mes · 10 usuarios`}
           </div>
         </div>
       </div>

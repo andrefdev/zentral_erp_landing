@@ -1,28 +1,39 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, Check, UserCheck } from "lucide-react";
-import { solutions } from "@/config/solutions";
+import { ArrowRight, Check, UserCheck, Users, Wallet, Package, ShoppingCart, Wrench, Folder, BarChart3, ShieldCheck } from "lucide-react";
+import { useTranslations } from "next-intl";
+
+const ICONS = [Users, Wallet, Package, ShoppingCart, Wrench, Folder, BarChart3, ShieldCheck];
+
+type Item = {
+  id: string;
+  code: string;
+  highlight: string;
+  tag: string;
+  tagline: string;
+  submodules: string[];
+  buyer: string;
+};
 
 export function Solution() {
-  const [activeId, setActiveId] = useState(solutions[0].id);
+  const t = useTranslations("landing.solution");
+  const items = t.raw("items") as Item[];
+  const [activeId, setActiveId] = useState(items[0].id);
 
   return (
     <section className="section" id="solucion">
       <div className="wrap">
         <div className="section-head">
-          <span className="eyebrow plain">La suite</span>
-          <h2 className="h2 h2--lg">Una suite empresarial, 8 soluciones.</h2>
-          <p className="h2-sub">
-            Cada solución resuelve un área completa del negocio, con su propio comprador y propuesta de valor.
-            Cómpralas por separado o como suite — entra pequeño, crece grande.
-          </p>
+          <span className="eyebrow plain">{t("eyebrow")}</span>
+          <h2 className="h2 h2--lg">{t("title")}</h2>
+          <p className="h2-sub">{t("subtitle")}</p>
         </div>
 
         <div className="sol-explorer">
-          <div className="sol-list" role="tablist" aria-label="Soluciones Zentral">
-            {solutions.map((s) => {
-              const Icon = s.icon;
+          <div className="sol-list" role="tablist" aria-label={t("listAria")}>
+            {items.map((s, i) => {
+              const Icon = ICONS[i] ?? Users;
               const active = s.id === activeId;
               return (
                 <button
@@ -36,7 +47,7 @@ export function Solution() {
                 >
                   <span className="sol-item-icon"><Icon size={18} /></span>
                   <span className="sol-item-text">
-                    <span className="sol-item-name">{s.name} {s.highlight}</span>
+                    <span className="sol-item-name">Zentral {s.highlight}</span>
                     <span className="sol-item-tag">{s.tag}</span>
                   </span>
                   <ArrowRight size={14} className="sol-item-arrow" />
@@ -46,8 +57,8 @@ export function Solution() {
           </div>
 
           <div className="sol-panes">
-            {solutions.map((s) => {
-              const Icon = s.icon;
+            {items.map((s, i) => {
+              const Icon = ICONS[i] ?? Users;
               const active = s.id === activeId;
               return (
                 <div
@@ -60,19 +71,19 @@ export function Solution() {
                   <div className="sol-pane-head">
                     <div className="sol-pane-icon"><Icon size={24} /></div>
                     <div>
-                      <div className="sol-pane-code">{s.code} · {s.submodules.length} submódulos</div>
-                      <h3 className="sol-pane-name">{s.name} <em>{s.highlight}</em></h3>
+                      <div className="sol-pane-code">{s.code} · {s.submodules.length} {t("submodulesSuffix")}</div>
+                      <h3 className="sol-pane-name">Zentral <em>{s.highlight}</em></h3>
                     </div>
                   </div>
                   <p className="sol-pane-tagline">{s.tagline}</p>
-                  <div className="sol-pane-sub-h">Submódulos incluidos</div>
+                  <div className="sol-pane-sub-h">{t("submodulesLabel")}</div>
                   <ul className="sol-pane-subs">
                     {s.submodules.map((sub) => (
                       <li key={sub}><Check size={14} />{sub}</li>
                     ))}
                   </ul>
                   <span className="sol-pane-buyer">
-                    <UserCheck size={14} />Comprador objetivo · {s.buyer}
+                    <UserCheck size={14} />{t("buyerLabel")} · {s.buyer}
                   </span>
                 </div>
               );

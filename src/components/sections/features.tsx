@@ -137,57 +137,39 @@ function SettingsMock() {
   );
 }
 
-export function Features() {
+import { getTranslations } from "next-intl/server";
+
+export async function Features() {
+  const t = await getTranslations("landing.features");
   return (
     <section className="section" style={{ paddingTop: 32 }}>
       <div className="wrap">
         <div className="split">
           <div className="split-copy">
-            <span className="eyebrow plain">Inteligencia artificial</span>
-            <h3 className="split-h">Tu copiloto de operaciones trabaja 24/7.</h3>
-            <p className="split-body">
-              Zentral IA no es un chatbot genérico. Está conectado a todos tus módulos: sabe cuánto vendiste,
-              quién tiene tareas vencidas, cómo está tu caja y qué alertas necesitas hoy.
-            </p>
-            <Bullets items={[
-              "Responde preguntas sobre tu operación en lenguaje natural.",
-              "Genera reportes y resúmenes automáticos.",
-              "Alerta proactiva: detecta anomalías antes de que sean problemas.",
-            ]} />
+            <span className="eyebrow plain">{t("ai.eyebrow")}</span>
+            <h3 className="split-h">{t("ai.title")}</h3>
+            <p className="split-body">{t("ai.body")}</p>
+            <Bullets items={t.raw("ai.bullets") as string[]} />
           </div>
           <div className="split-vis"><AiChatMock /></div>
         </div>
 
         <div className="split is-reverse">
           <div className="split-copy">
-            <span className="eyebrow plain">Visibilidad completa</span>
-            <h3 className="split-h">Sabe qué pasa en tu empresa en tiempo real.</h3>
-            <p className="split-body">
-              Un solo dashboard que centraliza ventas, equipo, caja y tareas. Sin abrir 4 programas distintos,
-              sin esperar el reporte del lunes.
-            </p>
-            <Bullets items={[
-              "KPIs de todas las áreas en un solo lugar.",
-              "Historial y trazabilidad de cada acción.",
-              "Acceso por roles: cada quien ve lo que necesita.",
-            ]} />
+            <span className="eyebrow plain">{t("vis.eyebrow")}</span>
+            <h3 className="split-h">{t("vis.title")}</h3>
+            <p className="split-body">{t("vis.body")}</p>
+            <Bullets items={t.raw("vis.bullets") as string[]} />
           </div>
           <div className="split-vis"><MiniDashboard /></div>
         </div>
 
         <div className="split">
           <div className="split-copy">
-            <span className="eyebrow plain">Implementación a medida</span>
-            <h3 className="split-h">Un ERP hecho para tu empresa, no al revés.</h3>
-            <p className="split-body">
-              Zentral se implementa y configura según cómo opera tu empresa — no al revés.
-              Con el equipo de Indrox detrás, no solo instalas un software: tienes un socio de implementación.
-            </p>
-            <Bullets items={[
-              "Módulos activados según tu operación real.",
-              "Flujos, permisos y reportes personalizados.",
-              "Soporte durante y después de la implementación.",
-            ]} />
+            <span className="eyebrow plain">{t("impl.eyebrow")}</span>
+            <h3 className="split-h">{t("impl.title")}</h3>
+            <p className="split-body">{t("impl.body")}</p>
+            <Bullets items={t.raw("impl.bullets") as string[]} />
           </div>
           <div className="split-vis"><SettingsMock /></div>
         </div>

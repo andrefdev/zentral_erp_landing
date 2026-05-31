@@ -1,6 +1,10 @@
-import { stats } from "@/config/content";
+import { getTranslations } from "next-intl/server";
 
-export function Stats() {
+type Stat = { value: string; emValue?: string; unit?: string; label: string };
+
+export async function Stats() {
+  const t = await getTranslations("landing");
+  const stats = t.raw("stats") as Stat[];
   return (
     <section className="section--tight section--sunken" style={{ padding: "64px 0" }}>
       <div className="stats">

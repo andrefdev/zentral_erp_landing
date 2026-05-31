@@ -1,24 +1,26 @@
 import { ArrowRight, MessageCircle } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 
-export function FinalCta() {
+export async function FinalCta() {
+  const t = await getTranslations("landing.finalCta");
   return (
     <section className="section section--ink final-cta" id="cta" style={{ padding: "120px 0" }}>
       <div className="final-cta-inner">
-        <span className="eyebrow plain" style={{ color: "var(--z-lime)" }}>Agenda tu demo</span>
-        <h2>Tu empresa ya está lista para operar en un solo lugar.</h2>
-        <p>Agenda una demo y en 30 minutos te mostramos cómo Zentral puede ordenar tu operación.</p>
+        <span className="eyebrow plain" style={{ color: "var(--z-lime)" }}>{t("eyebrow")}</span>
+        <h2>{t("title")}</h2>
+        <p>{t("subtitle")}</p>
         <div className="final-cta-actions">
           <a className="btn btn--primary btn--lg" href="https://indrox.com/contact" target="_blank" rel="noopener noreferrer">
-            Agendar demo gratis <ArrowRight size={16} />
+            {t("primary")} <ArrowRight size={16} />
           </a>
           <a className="btn btn--inverse-ghost btn--lg" href="https://indrox.com/contact" target="_blank" rel="noopener noreferrer">
-            <MessageCircle size={16} />Hablar con ventas
+            <MessageCircle size={16} />{t("secondary")}
           </a>
         </div>
         <div className="final-cta-foot">
-          <span>30 minutos</span><span className="dot" />
-          <span>Sin compromiso</span><span className="dot" />
-          <span>En español</span>
+          <span>{t("foot1")}</span><span className="dot" />
+          <span>{t("foot2")}</span><span className="dot" />
+          <span>{t("foot3")}</span>
         </div>
       </div>
     </section>

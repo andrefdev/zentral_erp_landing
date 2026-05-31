@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { getCompetitor, getCompetitorSlugs, ZENTRAL } from "@/lib/competitors";
+import { getCompetitor, getCompetitorSlugs, ZENTRAL, type Locale } from "@/lib/competitors";
 
 export const alt = "Alternativa a competidor";
 export const size = { width: 1200, height: 630 };
@@ -17,9 +17,9 @@ export default async function Image({
 }: {
   params: Promise<{ locale: string; brand: string }>;
 }) {
-  const { brand } = await params;
-  const c = getCompetitor(brand);
-  const brandName = c?.name ?? "esa marca";
+  const { locale, brand } = await params;
+  const c = getCompetitor(brand, locale as Locale);
+  const brandName = c?.name ?? (locale === "en" ? "that brand" : "esa marca");
 
   return new ImageResponse(
     (
@@ -54,7 +54,7 @@ export default async function Image({
               letterSpacing: 1,
             }}
           >
-            ZENTRAL · ALTERNATIVA
+            {locale === "en" ? "ZENTRAL · ALTERNATIVE" : "ZENTRAL · ALTERNATIVA"}
           </div>
         </div>
 
@@ -68,7 +68,7 @@ export default async function Image({
               fontWeight: 500,
             }}
           >
-            La mejor alternativa a
+            {locale === "en" ? "The best alternative to" : "La mejor alternativa a"}
           </div>
           <div
             style={{
@@ -96,7 +96,9 @@ export default async function Image({
           }}
         >
           <div style={{ display: "flex" }}>
-            {`ERP + CRM + IA · listo en ${ZENTRAL.implementationWeeks}`}
+            {locale === "en"
+              ? `ERP + CRM + AI · ready in ${ZENTRAL.implementationWeeks.en}`
+              : `ERP + CRM + IA · listo en ${ZENTRAL.implementationWeeks.es}`}
           </div>
           <div style={{ display: "flex" }}>zentral.indrox.com</div>
         </div>

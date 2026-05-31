@@ -2,20 +2,24 @@
 
 import { useState } from "react";
 import { Plus } from "lucide-react";
-import { faq } from "@/config/faq";
+import { useTranslations } from "next-intl";
+
+type FaqItem = { q: string; a: string };
 
 export function FaqSection() {
+  const t = useTranslations("landing.faq");
+  const items = t.raw("items") as FaqItem[];
   const [open, setOpen] = useState<number | null>(null);
   return (
     <section className="section" id="faq">
       <div className="wrap">
         <div className="section-head">
-          <span className="eyebrow plain">Preguntas frecuentes</span>
-          <h2 className="h2">Lo que la gente nos pregunta antes de empezar.</h2>
+          <span className="eyebrow plain">{t("eyebrow")}</span>
+          <h2 className="h2">{t("title")}</h2>
         </div>
 
         <div className="faq">
-          {faq.map((item, i) => {
+          {items.map((item, i) => {
             const isOpen = open === i;
             return (
               <div key={item.q} className={`faq-item ${isOpen ? "is-open" : ""}`}>

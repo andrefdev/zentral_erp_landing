@@ -1,7 +1,11 @@
 {
   "meta": {
     "title": "Zentral | The Operational Platform for SMBs in Peru & LATAM",
-    "description": "Centralize HR, tasks, documents, inventory, and accounting in one platform. No Excel. No chaos. From $79/month."
+    "titleTemplate": "%s | Zentral",
+    "description": "Centralize HR, tasks, documents, inventory and accounting in one platform. No Excel. No chaos. From $79/month.",
+    "ogAlt": "Zentral - All-in-one operational platform for SMBs",
+    "ogLocale": "en_US",
+    "keywords": ["ERP for SMBs", "ERP Peru", "ERP LATAM", "operational platform", "business software", "HR management", "SUNAT accounting", "inventory", "task management", "Odoo alternative", "SAP alternative", "cloud ERP", "Zentral", "Indrox"]
   },
   "nav": {
     "product": "Product",
@@ -9,6 +13,62 @@
     "comparison": "Compare",
     "roadmap": "Roadmap",
     "cta": "Start free"
+  },
+  "navbar": {
+    "ariaLogo": "Zentral · Home",
+    "ariaPrimary": "Primary",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "ariaMenu": "Menu",
+    "links": [
+      { "label": "Solutions", "href": "#solucion" },
+      { "label": "Pricing", "href": "#precios" },
+      { "label": "Cases", "href": "#casos" }
+    ],
+    "ctaLabel": "Book a demo"
+  },
+  "footerSite": {
+    "ariaLogo": "Zentral · Home",
+    "tagline": "The ERP that works for you. Operations, AI and customization in one place.",
+    "cols": [
+      {
+        "h": "Product",
+        "links": [
+          { "label": "The 8 solutions", "href": "#solucion" },
+          { "label": "Pricing", "href": "#precios" },
+          { "label": "Comparisons", "href": "#comparativa" },
+          { "label": "Cases", "href": "#casos" }
+        ]
+      },
+      {
+        "h": "Company",
+        "links": [
+          { "label": "About Zentral", "href": "#" },
+          { "label": "Indrox", "href": "#" },
+          { "label": "Careers", "href": "#" },
+          { "label": "Contact", "href": "#" }
+        ]
+      },
+      {
+        "h": "Legal",
+        "links": [
+          { "label": "Terms", "href": "#" },
+          { "label": "Privacy", "href": "#" },
+          { "label": "Security", "href": "#" }
+        ]
+      },
+      {
+        "h": "Contact",
+        "links": [
+          { "label": "hola@zentral.so", "href": "mailto:hola@zentral.so" },
+          { "label": "WhatsApp", "href": "#" },
+          { "label": "LinkedIn", "href": "#" },
+          { "label": "Lima, Peru", "href": "#" }
+        ]
+      }
+    ],
+    "copyright": "© 2026 Zentral · A product by Indrox",
+    "madeIn": "Made in Peru 🇵🇪"
   },
   "hero": {
     "badge": "Operational platform for businesses",
@@ -22,22 +82,10 @@
   "problem": {
     "title": "68% of SMBs operate with broken tools.",
     "cards": [
-      {
-        "title": "Excel + WhatsApp + Drive",
-        "description": "Scattered data, manual errors, hours lost copying information between tools."
-      },
-      {
-        "title": "Limited accounting software",
-        "description": "Only handles invoicing, but doesn't manage tasks, teams, documents, or operations."
-      },
-      {
-        "title": "Complex & expensive ERPs",
-        "description": "Odoo takes 3-6 months to implement. SAP costs +$40K/year. They need consultants."
-      },
-      {
-        "title": "Disconnected tools",
-        "description": "A CRM here, a task manager there, payroll somewhere else. Nothing talks to each other."
-      }
+      { "title": "Excel + WhatsApp + Drive", "description": "Scattered data, manual errors, hours lost copying information between tools." },
+      { "title": "Limited accounting software", "description": "Only handles invoicing, but doesn't manage tasks, teams, documents, or operations." },
+      { "title": "Complex & expensive ERPs", "description": "Odoo takes 3-6 months to implement. SAP costs +$40K/year. They need consultants." },
+      { "title": "Disconnected tools", "description": "A CRM here, a task manager there, payroll somewhere else. Nothing talks to each other." }
     ],
     "marketData": "The cloud ERP market for SMBs in LATAM reaches USD $2.81B"
   },
@@ -72,16 +120,7 @@
     "feature": "Feature",
     "partial": "Partial",
     "footer": "$199/month with 10 users included — 20% cheaper than Odoo, 46% cheaper than Zoho, 34% cheaper than Monday.",
-    "features": [
-      "HR & payroll",
-      "Task management",
-      "Documents & Drive",
-      "Inventory",
-      "SUNAT accounting",
-      "Operational AI",
-      "Visual customization",
-      "Implementation < 1 month"
-    ]
+    "features": ["HR & payroll", "Task management", "Documents & Drive", "Inventory", "SUNAT accounting", "Operational AI", "Visual customization", "Implementation < 1 month"]
   },
   "pricing": {
     "title": "Simple pricing. No surprises.",
@@ -90,24 +129,9 @@
     "promo": "20% off on annual billing. First 50 customers: 25% off the first year.",
     "perMonth": "/month",
     "plans": [
-      {
-        "name": "Starter",
-        "price": 79,
-        "description": "For entrepreneurs and micro-businesses.",
-        "features": ["Up to 3 users", "10 GB Drive", "Basic Zentral People", "Zentral Work", "Zentral Docs", "Email support"]
-      },
-      {
-        "name": "Professional",
-        "price": 199,
-        "description": "For growing SMBs.",
-        "features": ["Up to 10 users", "50 GB Drive", "All modules", "Zentral AI included", "Visual customization", "Priority support"]
-      },
-      {
-        "name": "Enterprise",
-        "price": 349,
-        "description": "For large and complex operations.",
-        "features": ["Up to 25 users", "200 GB Drive", "Everything unlimited", "API & webhooks", "Dedicated onboarding", "Guaranteed SLA"]
-      }
+      { "name": "Starter", "price": 79, "description": "For entrepreneurs and micro-businesses.", "features": ["Up to 3 users", "10 GB Drive", "Basic Zentral People", "Zentral Work", "Zentral Docs", "Email support"] },
+      { "name": "Professional", "price": 199, "description": "For growing SMBs.", "features": ["Up to 10 users", "50 GB Drive", "All modules", "Zentral AI included", "Visual customization", "Priority support"] },
+      { "name": "Enterprise", "price": 349, "description": "For large and complex operations.", "features": ["Up to 25 users", "200 GB Drive", "Everything unlimited", "API & webhooks", "Dedicated onboarding", "Guaranteed SLA"] }
     ]
   },
   "roadmap": {
@@ -156,5 +180,401 @@
       "legal": ["Privacy", "Terms", "SLA"]
     },
     "copyright": "All rights reserved."
+  },
+
+  "comparisonsHub": {
+    "metaTitle": "ERP comparisons: Zentral vs alternatives",
+    "metaDescription": "Compare Zentral Suite with Odoo, Defontana, Zoho, Nubox, Manager (Softland), SAP Business One, Bsale and more. Price, AI, CRM and implementation time.",
+    "eyebrow": "Comparisons",
+    "titleLine1": "Zentral vs.",
+    "titleLine2": "every alternative.",
+    "subtitle": "Honest comparisons, one per brand. If there's something Zentral doesn't do better, we say so.",
+    "cardCta": "See comparison",
+    "comparativaLabel": "Zentral vs {name}",
+    "schemaName": "Zentral comparisons"
+  },
+  "compareDetail": {
+    "metaTitle": "Zentral vs {name}: {year} comparison",
+    "metaDescriptionLead": "Compare Zentral and {name} side by side: price, features, AI, CRM and implementation.",
+    "eyebrow": "{year} comparison",
+    "title": "Zentral vs {name}",
+    "primaryCta": "See Zentral plans",
+    "secondaryCta": "Book a demo",
+    "kpiPrice": "Price (10 users)",
+    "kpiPriceVs": "vs {priceNote}",
+    "kpiImpl": "Implementation",
+    "kpiImplVs": "vs {weeks}",
+    "kpiSuite": "ERP + CRM + AI",
+    "kpiSuiteValue": "Yes, native",
+    "kpiSuiteVs": "{name}: not integrated",
+    "compareEyebrow": "Feature comparison",
+    "compareTitle": "{name} vs Zentral, feature by feature.",
+    "tableFeature": "Feature",
+    "tablePartial": "Partial",
+    "winsTheyTitle": "When {name} wins",
+    "winsZentralTitle": "When Zentral wins",
+    "doesNotSolve": "{name} doesn't solve: {item}",
+    "migrationEyebrow": "Migration",
+    "migrationTitle": "Migrating from {name} to Zentral",
+    "migrationCta": "See plans and start migration",
+    "faqEyebrow": "FAQ",
+    "faqTitle": "Zentral vs {name} — frequently asked questions.",
+    "otherEyebrow": "Other comparisons",
+    "otherTitle": "Compare Zentral with other alternatives",
+    "otherChip": "Zentral vs {name}",
+    "finalTitle": "Ready to leave {name}?",
+    "finalSubtitle": "Onboarding included, assisted migration and a single plan at USD ${price}/month for 10 users.",
+    "finalPrimary": "See plans",
+    "finalSecondary": "Book a demo"
+  },
+  "alternativeDetail": {
+    "metaTitle": "Best alternative to {name} in {year} | Zentral",
+    "metaDescription": "Looking for an alternative to {name}? Zentral Suite is an ERP + CRM with AI, ready in less than 3 weeks, for USD ${price}/month.",
+    "eyebrow": "Alternative to {name}",
+    "title": "The best alternative to {name} in {year}.",
+    "subtitle": "Zentral Suite replaces {name} with ERP + CRM + AI in a single platform, ready in less than 3 weeks and at lower cost.",
+    "primaryCta": "See plans",
+    "secondaryCta": "Full comparison",
+    "reasonsEyebrow": "Why choose Zentral",
+    "reasonsTitle": "6 reasons to swap {name} for Zentral.",
+    "reasons": [
+      "Implementation in {zentralWeeks} vs {weeks} for {name}.",
+      "Flat USD ${price}/month for 10 users (vs {priceNote}).",
+      "ERP + CRM in the same database — no fragile sync.",
+      "Operational and conversational AI included, not an add-on.",
+      "Native lead capture from WhatsApp and social media.",
+      "Onboarding and migration from {name} included."
+    ],
+    "migrationEyebrow": "Migration",
+    "migrationTitle": "Migrating from {name}: what happens to your data.",
+    "migrationCta": "See full feature comparison",
+    "faqEyebrow": "FAQ",
+    "faqTitle": "About switching from {name}.",
+    "finalTitle": "Migrate from {name} this month.",
+    "finalSubtitle": "Onboarding and migration included. USD ${price}/month for 10 users.",
+    "finalPrimary": "See plans",
+    "finalSecondary": "Book a demo"
+  },
+  "pricingPage": {
+    "metaTitle": "Pricing | Zentral Suite",
+    "metaDescription": "Simple, transparent pricing. Free onboarding, migration included and English/Spanish support.",
+    "heroBadge": "Free onboarding included · 14-day trial",
+    "heroTitleLine1": "Clear pricing.",
+    "heroTitleLine2": "No fine print.",
+    "heroSubtitle": "Start with the Suite or buy only what you need. Every plan includes free onboarding and Spanish support.",
+    "promo1": "20% off",
+    "promo1Text": "annual billing",
+    "promo2": "25% off",
+    "promo2Text": "first 50 customers",
+    "promo3": "20% off",
+    "promo3Text": "ERP + CRM cross-sell",
+    "includedEyebrow": "Everything included",
+    "includedTitle": "What comes with every plan.",
+    "included": [
+      { "t": "Free onboarding", "d": "Data migration, initial setup and team training at no extra cost." },
+      { "t": "AWS infrastructure", "d": "São Paulo (sa-east-1), daily backups, 99.9% uptime and AES-256 encryption." },
+      { "t": "Spanish support", "d": "Chat and email from 9:00 to 19:00 GMT-5. Shared Slack from the Professional plan." },
+      { "t": "Native SUNAT (Peru)", "d": "Electronic invoicing without integrators. Receipts, invoices, NC/ND and automatic sending." },
+      { "t": "Updates included", "d": "We ship weekly. Everything new lands in your account automatically, at no extra cost." },
+      { "t": "No downgrade fee", "d": "Change plans anytime. Prorated daily; no penalties, no fine print." }
+    ],
+    "faqEyebrow": "Pricing FAQ",
+    "faqTitle": "Billing questions.",
+    "faqs": [
+      { "q": "Can I change plans whenever I want?", "a": "Yes. You can upgrade or downgrade anytime from the billing panel. The change is prorated daily." },
+      { "q": "What does the free onboarding include?", "a": "Data migration from your current system (Excel, Defontana, HubSpot, Pipedrive), initial module setup, 4 training sessions for your team and 2 weeks of dedicated support." },
+      { "q": "Does the price include VAT?", "a": "No. Prices are in USD without taxes. If your company is in Peru we bill in PEN with IGV; in other countries we bill in USD." },
+      { "q": "Is there a trial period?", "a": "14-day free trial of the Professional Suite plan with no credit card required. At the end you choose a plan or cancel with no charges." },
+      { "q": "How are users counted?", "a": "By active user per month. Read-only users or bots don't count. You can add more users prorated." },
+      { "q": "What happens to my data if I cancel?", "a": "Your data is exported in standard format (CSV + JSON) and remains available for 90 days. We never share your information." }
+    ],
+    "customTitle": "Need a custom plan?",
+    "customSubtitle": "For 25+ users, multi-company or special requirements (SSO, premium SLA, customization), let's talk.",
+    "customPrimary": "Contact sales",
+    "customSecondary": "See comparison"
+  },
+  "resourcesHub": {
+    "metaTitle": "Resources | Zentral",
+    "metaDescription": "Blog, cases, docs and changelog from the Zentral team.",
+    "eyebrow": "Resources",
+    "titleLine1": "Learn, explore,",
+    "titleLine2": "implement.",
+    "subtitle": "Everything you need to get the most out of Zentral — from getting-started guides to real LATAM SMB stories.",
+    "hubs": [
+      { "key": "blog", "title": "Blog", "desc": "Practical guides, ERP and CRM trends in LATAM, and best practices for B2B SMBs.", "cta": "View articles" },
+      { "key": "cases", "title": "Case studies", "desc": "How agencies, consultancies and distributors migrated to Zentral and what results they got.", "cta": "View cases" },
+      { "key": "docs", "title": "Documentation", "desc": "Step-by-step guides for every ERP and CRM module, API reference and recommended flows.", "cta": "Go to docs" },
+      { "key": "changelog", "title": "Changelog", "desc": "What we ship each week: new features, improvements and fixes from the product team.", "cta": "View changes" }
+    ],
+    "recentEyebrow": "Just published",
+    "recentTitle": "Latest from the team.",
+    "recent": [
+      { "tag": "Blog", "title": "How to migrate from Defontana to Zentral in 2 weeks", "date": "Apr 10, 2026" },
+      { "tag": "Case", "title": "Consultora Andina: +47% productivity with Zentral Suite", "date": "Apr 03, 2026" },
+      { "tag": "Changelog", "title": "New: multi-touch attribution in Insights", "date": "Mar 28, 2026" }
+    ]
+  },
+  "blog": {
+    "metaTitle": "Blog | Zentral",
+    "metaDescription": "Ideas, guides and benchmarks for B2B SMBs in LATAM.",
+    "eyebrow": "Blog",
+    "titleLine1": "Ideas, guides and benchmarks",
+    "titleLine2": "for B2B SMBs in LATAM.",
+    "posts": [
+      { "tag": "Guide", "title": "How to migrate from Defontana to Zentral in 2 weeks", "excerpt": "The 6 steps we followed with 30+ companies to migrate accounting and master data without breaking close cycles.", "date": "Apr 10, 2026", "read": "8 min" },
+      { "tag": "Case", "title": "Consultora Andina: +47% productivity with Zentral Suite", "excerpt": "How they replaced HubSpot + Excel + Drive with one system and recovered 22 hours/week.", "date": "Apr 03, 2026", "read": "6 min" },
+      { "tag": "Opinion", "title": "Why an ERP without CRM no longer makes sense in 2026", "excerpt": "Sales are part of operations. Splitting data between systems is the root cause of 80% of operational problems.", "date": "Mar 27, 2026", "read": "5 min" },
+      { "tag": "Guide", "title": "Painless SUNAT: e-invoicing checklist", "excerpt": "Everything your company needs to validate before activating electronic invoicing — tested in 120+ SMBs.", "date": "Mar 20, 2026", "read": "10 min" },
+      { "tag": "Product", "title": "Zentral Capture now supports Instagram DMs", "excerpt": "How the new ingestion works, what data we capture and how leads are assigned automatically.", "date": "Mar 14, 2026", "read": "4 min" },
+      { "tag": "Benchmarks", "title": "How long it takes to implement an ERP in LATAM (2026)", "excerpt": "We compared Odoo, SAP B1, Defontana and Zentral. Spoiler: the variance is 3 weeks to 6 months.", "date": "Mar 06, 2026", "read": "7 min" }
+    ]
+  },
+  "cases": {
+    "metaTitle": "Case studies | Zentral",
+    "metaDescription": "Real stories of LATAM SMBs that left Excel, Odoo, Defontana and HubSpot for Zentral.",
+    "eyebrow": "Case studies",
+    "titleLine1": "Real stories.",
+    "titleLine2": "Real numbers.",
+    "subtitle": "120+ LATAM companies left Excel, Odoo, Defontana and HubSpot for Zentral. These are some of them.",
+    "cases": [
+      { "vertical": "Digital agency", "company": "Tripel", "metric": "+47%", "metricLabel": "PM team productivity", "quote": "We replaced 5 tools with Zentral. PMs recovered 22h/week that were going into copying data.", "stack": ["Work", "People", "Finance", "CRM"] },
+      { "vertical": "Consultancy", "company": "Consultora Andina", "metric": "$12.4K", "metricLabel": "first deal closed from WhatsApp", "quote": "Zentral Capture turned WhatsApp conversations into real deals. Onboarding took 11 days.", "stack": ["CRM", "Docs", "Finance"] },
+      { "vertical": "B2B distributor", "company": "Molina & Co.", "metric": "−78%", "metricLabel": "inventory errors", "quote": "The SUNAT invoice is generated automatically when the deal closes. Stock and accounting up to date without data entry.", "stack": ["Stock", "Finance", "CRM"] },
+      { "vertical": "B2B SaaS", "company": "Conecta+", "metric": "3.2x", "metricLabel": "collection speed", "quote": "Zentral Pay runs subscriptions on its own. We went from collecting in 45 days to 14 days on average.", "stack": ["Pay", "Finance", "CRM"] },
+      { "vertical": "Boutique agency", "company": "Indrox", "metric": "100%", "metricLabel": "billable hours tracked", "quote": "Consultant time enters the project in Work and goes straight into the monthly invoice. Zero leakage.", "stack": ["Work", "People", "Finance"] },
+      { "vertical": "B2B retail", "company": "Andina Co.", "metric": "< 3 wk", "metricLabel": "full onboarding", "quote": "We migrated from Defontana + HubSpot + Excel without losing accounting closes or deal history.", "stack": ["ERP", "CRM", "Capture"] }
+    ],
+    "ctaTitle": "Want to be the next case?",
+    "ctaSubtitle": "The first 50 customers get 25% off the first year and priority onboarding with the team.",
+    "ctaPrimary": "See plans",
+    "ctaSecondary": "Book a demo"
+  },
+  "changelog": {
+    "metaTitle": "Changelog | Zentral",
+    "metaDescription": "Public log from the Zentral product team.",
+    "eyebrow": "Changelog",
+    "titleLine1": "What we ship",
+    "titleLine2": "every week.",
+    "subtitle": "We build fast. This is the product team's public log.",
+    "tagFeature": "Feature",
+    "tagImprovement": "Improvement",
+    "tagFix": "Fix",
+    "entries": [
+      { "date": "Apr 15, 2026", "version": "v3.8.0", "tag": "Feature", "title": "Multi-touch attribution in Insights", "items": ["New data-driven attribution model based on the closed deal.", "Visualization by channel, campaign and funnel stage.", "Export to CSV and Looker Studio from the dashboard."] },
+      { "date": "Apr 08, 2026", "version": "v3.7.2", "tag": "Improvement", "title": "Zentral Capture supports Instagram DMs", "items": ["Automatic DM ingestion from Business accounts.", "Initial AI scoring based on the first message.", "Round-robin assignment configurable per team."] },
+      { "date": "Apr 01, 2026", "version": "v3.7.1", "tag": "Fix", "title": "Bank reconciliation — BCP edge cases", "items": ["Fixed parsing of statements with multiple currencies.", "Automatic retry on bank timeouts."] },
+      { "date": "Mar 25, 2026", "version": "v3.7.0", "tag": "Feature", "title": "Zentral AI · Dynamic playbook", "items": ["The Chrome assistant now personalizes replies by deal stage.", "Playbook library shared by team.", "Usage and adoption metrics per rep."] },
+      { "date": "Mar 18, 2026", "version": "v3.6.4", "tag": "Improvement", "title": "Finance — 40% faster monthly close", "items": ["Entry grouping by cost center.", "New balance aging report."] },
+      { "date": "Mar 11, 2026", "version": "v3.6.3", "tag": "Fix", "title": "Work · drag & drop on large boards", "items": ["Improved performance for boards with >500 tasks.", "Drag state restored after refresh."] }
+    ]
+  },
+  "landing": {
+    "hero": {
+      "eyebrow": "Enterprise suite with AI for LATAM",
+      "titleStart": "The ERP that",
+      "titleHighlight": "works",
+      "titleEnd": "for you.",
+      "subtitle": "Faster to implement than SAP. More modern than Odoo. Tailored to how your business actually runs.",
+      "ctaHowItWorks": "See how it works",
+      "ctaDemo": "Book a demo",
+      "trust1": "No lock-in",
+      "trust2": "3-week implementation",
+      "trust3": "Spanish/English support"
+    },
+    "waitlist": {
+      "placeholder": "you@company.com",
+      "button": "Join the waitlist",
+      "successMsg": "You're in! We'll let you know when it's available for your company.",
+      "ariaInput": "Work email"
+    },
+    "logoBar": {
+      "label": "Companies already running on Zentral",
+      "ariaLabel": "Customers",
+      "customers": ["Distribuidora Norte", "Grupo Villena", "TechRetail", "LogiPyme", "ConsultExpress", "Importadora Andina"]
+    },
+    "problem": {
+      "eyebrow": "The problem",
+      "title": "Does your business run on 6 tools that don't talk to each other?",
+      "subtitle": "Excel, WhatsApp, Drive, accounting software, HR spreadsheets, sales and inventory all separate. There's a hidden cost in that: lost control, duplicate data and hours wasted in manual processes.",
+      "arrowText": "All of this should live in",
+      "arrowStrong": "one place",
+      "toolsAria": "Scattered tools",
+      "tools": ["Excel", "WhatsApp", "Drive", "Calendar", "Accounting", "HR", "Tasks", "Inventory", "Reports"],
+      "pains": [
+        { "title": "Duplicate data", "body": "The same number across 3 different sheets. You never know which one is real." },
+        { "title": "No traceability", "body": "Who approved this? When did it arrive? No one can answer." },
+        { "title": "Manual processes", "body": "Hours lost copying, pasting and sending files over WhatsApp." },
+        { "title": "ERPs that don't fit", "body": "Odoo and SAP: either too rigid, or too expensive and slow to implement." }
+      ]
+    },
+    "solution": {
+      "eyebrow": "The suite",
+      "title": "One enterprise suite, 8 solutions.",
+      "subtitle": "Each solution covers a full business area with its own buyer and value prop. Buy them separately or as a suite — start small, grow big.",
+      "listAria": "Zentral solutions",
+      "submodulesLabel": "Included submodules",
+      "buyerLabel": "Target buyer",
+      "submodulesSuffix": "submodules",
+      "items": [
+        { "id": "sol-01", "code": "Solution 01", "highlight": "People", "tag": "Human capital and payroll", "tagline": "Centralize the employee lifecycle: hiring, organization, attendance, leave and payroll in one platform.", "submodules": ["Personnel and org chart", "Hiring and contracts", "Time and attendance", "Leave and vacations", "Payroll and pay slips", "Employee portal"], "buyer": "HR Director · CHRO" },
+        { "id": "sol-02", "code": "Solution 02", "highlight": "Finance", "tag": "End-to-end financial control", "tagline": "Full visibility and control of cash: invoicing, collections, payments, treasury, reconciliation and assets.", "submodules": ["Accounts receivable", "Purchasing and AP", "Treasury", "Bank reconciliation", "Settlements", "Funding requests", "Fixed assets", "Financial audit", "Accounting (roadmap)"], "buyer": "CFO · Finance Director" },
+        { "id": "sol-03", "code": "Solution 03", "highlight": "Supply", "tag": "Supply chain and stock", "tagline": "End-to-end flow of products and materials: catalog, BOM, inventory, purchasing and warehouses with location-level traceability.", "submodules": ["Product catalog", "Recipes and BOM", "Multi-warehouse inventory", "Purchasing and vendors", "Warehouses and locations", "Alerts and incidents"], "buyer": "COO · Operations Director" },
+        { "id": "sol-04", "code": "Solution 04", "highlight": "Commerce", "tag": "Sales, POS and customers", "tagline": "The full customer relationship: point of sale, digital channels, loyalty and campaigns with a 360 view.", "submodules": ["Customers (CRM base)", "Point of sale (POS)", "Sales transactions", "Sales channels", "Loyalty programs", "Coupons and promos", "Marketing campaigns", "Commercial reports"], "buyer": "CCO · Commercial Director" },
+        { "id": "sol-05", "code": "Solution 05", "highlight": "Assets", "tag": "Assets and maintenance", "tagline": "Maximize the useful life of equipment and facilities with preventive maintenance, work orders and technical resources.", "submodules": ["Operating equipment and assets", "Maintenance plans", "Work orders", "Technical resources", "Maintenance alerts"], "buyer": "Maintenance Lead · COO" },
+        { "id": "sol-06", "code": "Solution 06", "highlight": "Workplace", "tag": "Drive, tasks and collaboration", "tagline": "Replace scattered tools with a collaborative environment connected to the ERP: drive, tasks, forms and requests.", "submodules": ["Corporate drive", "Tasks and projects", "Dynamic forms", "Internal requests"], "buyer": "COO · Operations Director" },
+        { "id": "sol-07", "code": "Solution 07", "highlight": "Insights", "tag": "Analytics and dashboards", "tagline": "Turn daily operations into strategic decisions with executive dashboards, real-time KPIs and cross-solution reports.", "submodules": ["Executive dashboard", "Reports by solution", "Personal KPIs"], "buyer": "CEO · Executive team" },
+        { "id": "sol-08", "code": "Solution 08", "highlight": "Admin", "tag": "Security and governance", "tagline": "Full control of your environment: multi-company, users, granular permissions, MFA and full audit traceability.", "submodules": ["Companies and sites", "Users and access", "Roles and permissions", "Security (MFA)", "Corporate branding", "Audit", "Global config"], "buyer": "IT Director · Admin" }
+      ]
+    },
+    "features": {
+      "ai": {
+        "eyebrow": "Artificial intelligence",
+        "title": "Your operations copilot works 24/7.",
+        "body": "Zentral AI isn't a generic chatbot. It's connected to every module: it knows how much you sold, who has overdue tasks, how cash looks and what alerts matter today.",
+        "bullets": [
+          "Answers questions about your operation in natural language.",
+          "Generates automatic reports and summaries.",
+          "Proactive alerts: spots anomalies before they become problems."
+        ]
+      },
+      "vis": {
+        "eyebrow": "Full visibility",
+        "title": "Know what's happening in your business in real time.",
+        "body": "One dashboard that centralizes sales, team, cash and tasks. No opening 4 different apps, no waiting for Monday's report.",
+        "bullets": [
+          "KPIs from every area in one place.",
+          "History and traceability for every action.",
+          "Role-based access: everyone sees what they need."
+        ]
+      },
+      "impl": {
+        "eyebrow": "Tailored implementation",
+        "title": "An ERP built for your company, not the other way around.",
+        "body": "Zentral is set up to match how your company actually operates — not the reverse. With the Indrox team behind it, you don't just install software: you get an implementation partner.",
+        "bullets": [
+          "Modules activated based on your real operation.",
+          "Custom flows, permissions and reports.",
+          "Support during and after implementation."
+        ]
+      }
+    },
+    "stats": [
+      { "emValue": "−60%", "value": "", "label": "separate tools replaced" },
+      { "value": "3", "unit": "weeks", "label": "average implementation time" },
+      { "value": "8", "unit": "solutions", "label": "in a single enterprise suite" },
+      { "value": "4:1", "label": "target revenue / cost ratio" }
+    ],
+    "aiHighlight": {
+      "eyebrow": "Zentral AI",
+      "title": "Not a chatbot. A copilot that operates across all 8 solutions.",
+      "cards": [
+        { "title": "Daily summary", "body": "Zentral AI analyzes your modules every morning and sends you a summary of what matters most." },
+        { "title": "Proactive alerts", "body": "It tells you when cash flow drops below your threshold or when critical tasks are overdue." },
+        { "title": "Reports in seconds", "body": "Ask for the report you need in natural language. No Excel, no waiting for the accountant." },
+        { "title": "Team management", "body": "It knows who hit their goals, which tasks are blocked and what needs attention today." }
+      ]
+    },
+    "compare": {
+      "eyebrow": "Comparison",
+      "title": "You shouldn't have to choose between simplicity and power.",
+      "subtitle": "With Zentral, you get both.",
+      "tableAria": "ERP comparison",
+      "capability": "Capability",
+      "partial": "Partial",
+      "competitors": ["Zentral", "Odoo", "SAP B1", "Excel + WhatsApp"],
+      "rows": [
+        "Fast implementation (< 4 weeks)",
+        "Native AI built in",
+        "Custom-tailored fit",
+        "Affordable for SMBs",
+        "LATAM support and reality",
+        "Everything in one place"
+      ],
+      "chips": [
+        { "label": "Zentral vs Odoo", "href": "#" },
+        { "label": "Zentral vs SAP", "href": "#" },
+        { "label": "Zentral vs Excel", "href": "#" }
+      ]
+    },
+    "pricingSection": {
+      "eyebrow": "Pricing",
+      "title": "An investment that pays for itself.",
+      "mostPopular": "Most popular",
+      "plans": [
+        { "name": "Starter", "price": "USD 79", "priceSuffix": "/ month", "impl": "+ USD 2,990 implementation", "for": "Small business that wants to bring order to core areas.", "features": ["Up to 2 Zentral solutions", "5 users included", "Guided onboarding", "Email support", "Executive dashboard (Insights)"], "cta": "Start with Starter", "ctaVariant": "ghost" },
+        { "name": "Professional", "price": "USD 199", "priceSuffix": "/ month", "impl": "+ USD 4,990 implementation", "for": "Growing company that needs several connected solutions.", "features": ["Everything in Starter", "Up to 4 solutions", "15 users included", "Cross-solution Zentral AI", "Custom reports", "Priority support", "Basic integrations"], "cta": "Start with Professional", "featured": true, "ctaVariant": "primary" },
+        { "name": "Enterprise", "price": "Custom", "impl": "From USD 6,500 implementation", "for": "Business groups and multi-company operations.", "features": ["Everything in Professional", "Full suite · 8 solutions", "Multi-company and multi-site", "Unlimited users", "Custom integrations and modules", "Dedicated account manager"], "cta": "Talk to sales", "ctaVariant": "ghost" }
+      ],
+      "trust": ["No lock-in contract", "Demo before signing", "Implementation support included"],
+      "addons": "Additional users USD 15/month · Extra modules · AI automations · Custom reports"
+    },
+    "beforeAfter": {
+      "eyebrow": "Case studies",
+      "title": "How a company's operation changes with Zentral.",
+      "beforeBadge": "Before",
+      "beforeTitle": "Operation scattered across 7 tools.",
+      "beforeTools": [
+        { "label": "Excel per department", "count": "× 4" },
+        { "label": "WhatsApp groups", "count": "× 3" },
+        { "label": "Disorganized Drive" },
+        { "label": "External accounting system" },
+        { "label": "No traceability" }
+      ],
+      "afterBadge": "After",
+      "afterTitle": "One platform. Everything centralized.",
+      "afterCardHead": "Zentral · suite running",
+      "afterRows": [
+        { "label": "Zentral People", "value": "active" },
+        { "label": "Zentral Finance", "value": "active" },
+        { "label": "Zentral Commerce", "value": "active" },
+        { "label": "Zentral Supply", "value": "active" },
+        { "label": "Zentral Workplace", "value": "active" },
+        { "label": "Zentral AI · cross-domain", "value": "24/7" }
+      ],
+      "testimonials": [
+        { "quote": "\"We used to run on 7 different tools. With Zentral everything is in one place and my team knows exactly what to do each day.\"", "initials": "CM", "name": "Carlos M.", "role": "GM · Distribuidora Norte", "stats": [{ "n": "4", "l": "tools\nreplaced" }, { "n": "12h", "l": "recovered\nper week" }] },
+        { "quote": "\"Implementation was fast and the Indrox team set everything up to match how we operate. It wasn't install-and-leave.\"", "initials": "AP", "name": "Ana P.", "role": "Director of Operations · TechRetail", "stats": [{ "n": "3 wk", "l": "for full\ndeployment" }] }
+      ]
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "What people ask us before getting started.",
+      "items": [
+        { "q": "How long does it take to implement Zentral?", "a": "On average 3 weeks from project kickoff. It depends on the number of modules and the complexity of your operation. Our Indrox team supports the whole process." },
+        { "q": "Can I start with just a few solutions?", "a": "Yes. Zentral is a modular suite: each solution is purchased separately and connects with the rest. Many companies start with Zentral Commerce + Workplace and add Finance, People or Supply as they grow. Indrox helps you pick the right starting package for your industry." },
+        { "q": "Does it integrate with accounting systems and SUNAT?", "a": "Yes. Zentral integrates with the main accounting systems in the Peruvian market and generates the reports SUNAT requires." },
+        { "q": "What if I need something that isn't in the standard solutions?", "a": "Indrox can build custom submodules and flows on top of any of the 8 solutions. That's part of our value prop: we don't squeeze you into a generic SaaS, we extend Zentral to fit your real operation." },
+        { "q": "How is it different from Odoo?", "a": "Odoo is powerful but complex, slow to implement and needs specialized consultants. Zentral is designed to be implemented in weeks, not months, with local support and AI built in from day one." },
+        { "q": "Is there support in Spanish and for LATAM?", "a": "Yes. Zentral and the Indrox team operate from Peru. We understand the reality of LATAM SMBs: SUNAT, electronic invoicing, local payments, informal processes and everything international ERPs ignore." }
+      ]
+    },
+    "finalCta": {
+      "eyebrow": "Book your demo",
+      "title": "Your business is ready to operate in one place.",
+      "subtitle": "Book a demo and in 30 minutes we'll show you how Zentral can bring order to your operation.",
+      "primary": "Book a free demo",
+      "secondary": "Talk to sales",
+      "foot1": "30 minutes",
+      "foot2": "No commitment",
+      "foot3": "In English or Spanish"
+    }
+  },
+  "docs": {
+    "metaTitle": "Documentation | Zentral",
+    "metaDescription": "Step-by-step guides, API reference and recommended flows for every vertical.",
+    "eyebrow": "Documentation",
+    "titleLine1": "Everything your team",
+    "titleLine2": "needs to learn.",
+    "subtitle": "Step-by-step guides, API reference and recommended flows for every vertical.",
+    "sections": [
+      { "title": "Getting started", "items": ["Create your account and choose a plan", "Invite your team and assign roles", "Import data from Excel, Defontana or HubSpot", "Set up your first ERP + CRM flow", "Connect WhatsApp Business"] },
+      { "title": "ERP modules", "items": ["Zentral People", "Zentral Work", "Zentral Docs", "Zentral Drive", "Zentral Stock", "Zentral Finance (SUNAT)", "Zentral Pay", "Operational Zentral AI"] },
+      { "title": "CRM modules", "items": ["Capture (WhatsApp, LinkedIn, IG, X, FB)", "Pipeline and deals", "Outreach and sequences", "Insights and attribution", "Chrome AI assistant", "Playbooks and lead scoring"] },
+      { "title": "Developers", "items": ["REST API v1", "Webhooks", "OAuth 2.0", "Events and automations", "Zentral CLI", "Rate limits and sandbox"] }
+    ],
+    "ctaTitle": "Can't find what you're looking for?",
+    "ctaSubtitle": "Spanish support chat from 9:00 to 19:00 GMT-5. Shared Slack from Professional.",
+    "ctaPrimary": "Chat with support",
+    "ctaSecondary": "View API reference"
   }
 }

@@ -1,13 +1,29 @@
 import { Check } from "lucide-react";
-import { plans, pricingTrust, pricingAddons } from "@/config/pricing";
+import { getTranslations } from "next-intl/server";
 
-export function Pricing() {
+type Plan = {
+  name: string;
+  price: string;
+  priceSuffix?: string;
+  impl: string;
+  for: string;
+  features: string[];
+  cta: string;
+  featured?: boolean;
+  ctaVariant: "primary" | "ghost";
+};
+
+export async function Pricing() {
+  const t = await getTranslations("landing.pricingSection");
+  const plans = t.raw("plans") as Plan[];
+  const trust = t.raw("trust") as string[];
+
   return (
     <section className="section" id="precios">
       <div className="wrap">
         <div className="section-head">
-          <span className="eyebrow plain">Precios</span>
-          <h2 className="h2 h2--lg">Inversión que se paga sola.</h2>
+          <span className="eyebrow plain">{t("eyebrow")}</span>
+          <h2 className="h2 h2--lg">{t("title")}</h2>
         </div>
 
         <div className="plans">
@@ -15,7 +31,7 @@ export function Pricing() {
             const isText = !p.priceSuffix;
             return (
               <article className={`plan ${p.featured ? "is-featured" : ""}`} key={p.name}>
-                {p.featured && <span className="plan-tag">Más popular</span>}
+                {p.featured && <span className="plan-tag">{t("mostPopular")}</span>}
                 <div className="plan-name">{p.name}</div>
                 <div className={`plan-price ${isText ? "is-text" : ""}`}>
                   {p.price}
@@ -42,11 +58,11 @@ export function Pricing() {
         </div>
 
         <div className="price-trust">
-          {pricingTrust.map((t) => (
-            <span key={t}><Check size={14} />{t}</span>
+          {trust.map((x) => (
+            <span key={x}><Check size={14} />{x}</span>
           ))}
         </div>
-        <p className="price-addons">{pricingAddons}</p>
+        <p className="price-addons">{t("addons")}</p>
       </div>
     </section>
   );
