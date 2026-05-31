@@ -7,6 +7,7 @@ import { Check, X, Minus, ArrowRight } from "lucide-react";
 import { routing } from "@/i18n/routing";
 import { Navbar } from "@/components/site/navbar";
 import { Footer } from "@/components/site/footer";
+import { MeetingCta } from "@/components/site/meeting-cta";
 import { JsonLd } from "@/components/seo/json-ld";
 import {
   getCompetitor,
@@ -294,18 +295,7 @@ export default async function ComparisonDetail({ params }: { params: Params }) {
           </div>
         </section>
 
-        <section className="bg-black text-white py-20">
-          <div className="max-w-[1280px] mx-auto px-6 lg:px-8 text-center">
-            <h2 className="font-display text-3xl md:text-5xl font-medium">{t("finalTitle", { name: c.name })}</h2>
-            <p className="text-lg text-[#A3A3A3] mt-5 max-w-2xl mx-auto">
-              {t("finalSubtitle", { price: z.priceFromUsd })}
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3 justify-center">
-              <Link href={L("/pricing")} className="btn-primary">{t("finalPrimary")}</Link>
-              <a href="https://indrox.com/es/contact" className="btn-ghost text-white">{t("finalSecondary")}</a>
-            </div>
-          </div>
-        </section>
+        <MeetingCta id={`cta-${c.slug}`} />
       </main>
       <Footer locale={locale} />
     </>

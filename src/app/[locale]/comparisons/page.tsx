@@ -7,6 +7,7 @@ import { ArrowRight } from "lucide-react";
 import { routing } from "@/i18n/routing";
 import { Navbar } from "@/components/site/navbar";
 import { Footer } from "@/components/site/footer";
+import { MeetingCta } from "@/components/site/meeting-cta";
 import { JsonLd } from "@/components/seo/json-ld";
 import { getCompetitors, type Locale } from "@/lib/competitors";
 
@@ -95,6 +96,8 @@ export default async function ComparisonsHub({ params }: { params: Params }) {
             </div>
           </div>
         </section>
+
+        <MeetingCta id="cta-comparisons" />
       </main>
       <Footer locale={locale} />
     </>

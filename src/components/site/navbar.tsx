@@ -3,13 +3,13 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 type NavLink = { label: string; href: string };
 
-function Logo({ ariaLabel }: { ariaLabel: string }) {
+function Logo({ ariaLabel, href }: { ariaLabel: string; href: string }) {
   return (
-    <a className="logo" href="#top" aria-label={ariaLabel}>
+    <a className="logo" href={href} aria-label={ariaLabel}>
       <span className="logo-mark" aria-hidden="true" />
       <span>zentral</span>
     </a>
@@ -18,6 +18,8 @@ function Logo({ ariaLabel }: { ariaLabel: string }) {
 
 export function Navbar() {
   const t = useTranslations("navbar");
+  const locale = useLocale();
+  const homeHref = `/${locale}`;
   const [stuck, setStuck] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -39,7 +41,7 @@ export function Navbar() {
           layout
           transition={{ type: "spring", stiffness: 280, damping: 32, mass: 0.9 }}
         >
-          <Logo ariaLabel={t("ariaLogo")} />
+          <Logo ariaLabel={t("ariaLogo")} href={homeHref} />
           <ul className="nav-links" role="list">
             {links.map((l) => (
               <li key={l.href}><a href={l.href}>{l.label}</a></li>
@@ -62,7 +64,7 @@ export function Navbar() {
       <div className={`mob-scrim ${open ? "is-open" : ""}`} onClick={() => setOpen(false)} aria-hidden />
       <aside className={`mob-drawer ${open ? "is-open" : ""}`} aria-label={t("ariaMenu")} aria-hidden={!open}>
         <div className="mob-drawer-head">
-          <Logo ariaLabel={t("ariaLogo")} />
+          <Logo ariaLabel={t("ariaLogo")} href={homeHref} />
           <button className="hamburger" aria-label={t("closeMenu")} onClick={() => setOpen(false)}>
             <X size={18} />
           </button>
