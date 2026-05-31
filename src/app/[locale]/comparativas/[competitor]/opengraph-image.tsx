@@ -5,15 +5,6 @@ export const alt = "Zentral vs competidor";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export function generateImageMetadata({
-  params,
-}: {
-  params: { locale: string; competitor: string };
-}) {
-  const c = getCompetitor(params.competitor);
-  return [{ id: "card", alt: c ? `Zentral vs ${c.name}` : alt, size, contentType }];
-}
-
 export async function generateStaticParams() {
   const slugs = getCompetitorSlugs();
   return ["es", "en"].flatMap((locale) =>
@@ -49,13 +40,21 @@ export default async function Image({
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
           <div
             style={{
+              display: "flex",
               width: 14,
               height: 14,
               borderRadius: 4,
               background: "#9333EA",
             }}
           />
-          <div style={{ fontSize: 26, color: "#A3A3A3", letterSpacing: 1 }}>
+          <div
+            style={{
+              display: "flex",
+              fontSize: 26,
+              color: "#A3A3A3",
+              letterSpacing: 1,
+            }}
+          >
             ZENTRAL · COMPARATIVA
           </div>
         </div>
@@ -63,19 +62,22 @@ export default async function Image({
         <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
           <div
             style={{
+              display: "flex",
+              flexDirection: "column",
               fontSize: 110,
               lineHeight: 1,
               fontWeight: 600,
               letterSpacing: "-0.03em",
-              display: "flex",
-              flexDirection: "column",
             }}
           >
-            <span>Zentral</span>
-            <span style={{ color: "#9333EA" }}>vs {competitorName}.</span>
+            <div style={{ display: "flex" }}>Zentral</div>
+            <div style={{ display: "flex", color: "#9333EA" }}>
+              {`vs ${competitorName}.`}
+            </div>
           </div>
           <div
             style={{
+              display: "flex",
               fontSize: 30,
               color: "#A3A3A3",
               maxWidth: 1000,
@@ -97,8 +99,10 @@ export default async function Image({
             color: "#A3A3A3",
           }}
         >
-          <span>ERP + CRM + IA</span>
-          <span>USD ${ZENTRAL.priceFromUsd}/mes · 10 usuarios</span>
+          <div style={{ display: "flex" }}>ERP + CRM + IA</div>
+          <div style={{ display: "flex" }}>
+            {`USD $${ZENTRAL.priceFromUsd}/mes · 10 usuarios`}
+          </div>
         </div>
       </div>
     ),

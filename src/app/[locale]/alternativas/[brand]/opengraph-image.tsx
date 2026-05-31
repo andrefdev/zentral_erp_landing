@@ -5,17 +5,6 @@ export const alt = "Alternativa a competidor";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export function generateImageMetadata({
-  params,
-}: {
-  params: { locale: string; brand: string };
-}) {
-  const c = getCompetitor(params.brand);
-  return [
-    { id: "card", alt: c ? `Alternativa a ${c.name}` : alt, size, contentType },
-  ];
-}
-
 export async function generateStaticParams() {
   const slugs = getCompetitorSlugs();
   return ["es", "en"].flatMap((locale) =>
@@ -50,13 +39,21 @@ export default async function Image({
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
           <div
             style={{
+              display: "flex",
               width: 14,
               height: 14,
               borderRadius: 4,
               background: "#9333EA",
             }}
           />
-          <div style={{ fontSize: 26, color: "#A3A3A3", letterSpacing: 1 }}>
+          <div
+            style={{
+              display: "flex",
+              fontSize: 26,
+              color: "#A3A3A3",
+              letterSpacing: 1,
+            }}
+          >
             ZENTRAL · ALTERNATIVA
           </div>
         </div>
@@ -64,6 +61,7 @@ export default async function Image({
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
           <div
             style={{
+              display: "flex",
               fontSize: 70,
               color: "#A3A3A3",
               lineHeight: 1,
@@ -74,6 +72,7 @@ export default async function Image({
           </div>
           <div
             style={{
+              display: "flex",
               fontSize: 130,
               lineHeight: 1,
               fontWeight: 600,
@@ -81,7 +80,7 @@ export default async function Image({
               color: "#9333EA",
             }}
           >
-            {brandName}.
+            {`${brandName}.`}
           </div>
         </div>
 
@@ -96,8 +95,10 @@ export default async function Image({
             color: "#A3A3A3",
           }}
         >
-          <span>ERP + CRM + IA · listo en {ZENTRAL.implementationWeeks}</span>
-          <span>zentral.indrox.com</span>
+          <div style={{ display: "flex" }}>
+            {`ERP + CRM + IA · listo en ${ZENTRAL.implementationWeeks}`}
+          </div>
+          <div style={{ display: "flex" }}>zentral.indrox.com</div>
         </div>
       </div>
     ),
