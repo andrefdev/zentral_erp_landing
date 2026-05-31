@@ -1,19 +1,33 @@
 import type { MetadataRoute } from "next";
+import { getCompetitorSlugs } from "@/lib/competitors";
 
 const BASE_URL = "https://zentral.indrox.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString();
   const locales = ["es", "en"];
+  const slugs = getCompetitorSlugs();
 
-  const pages = [
+  const staticPages = [
     { path: "", changeFrequency: "weekly" as const, priority: 1.0 },
-    { path: "/vs-odoo", changeFrequency: "monthly" as const, priority: 0.8 },
-    { path: "/vs-defontana", changeFrequency: "monthly" as const, priority: 0.8 },
-    { path: "/vs-excel", changeFrequency: "monthly" as const, priority: 0.8 },
-    { path: "/vs-monday", changeFrequency: "monthly" as const, priority: 0.8 },
-    { path: "/vs-zoho", changeFrequency: "monthly" as const, priority: 0.8 },
+    { path: "/precios", changeFrequency: "weekly" as const, priority: 0.9 },
+    { path: "/comparativas", changeFrequency: "weekly" as const, priority: 0.9 },
+    { path: "/recursos", changeFrequency: "weekly" as const, priority: 0.7 },
   ];
+
+  const comparisonPages = slugs.map((slug) => ({
+    path: `/comparativas/${slug}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.85,
+  }));
+
+  const alternativePages = slugs.map((slug) => ({
+    path: `/alternativas/${slug}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  const pages = [...staticPages, ...comparisonPages, ...alternativePages];
 
   return pages.flatMap((page) =>
     locales.map((locale) => ({

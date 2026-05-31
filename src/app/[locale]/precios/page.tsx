@@ -99,7 +99,7 @@ export default async function Precios({
             </p>
             <div className="mt-8 flex flex-wrap gap-3 justify-center">
               <a href="#" className="btn-primary">Contactar ventas</a>
-              <Link href={L("/comparativa")} className="btn-ghost text-white">Ver comparativa</Link>
+              <Link href={L("/comparativas")} className="btn-ghost text-white">Ver comparativa</Link>
             </div>
           </div>
         </section>
