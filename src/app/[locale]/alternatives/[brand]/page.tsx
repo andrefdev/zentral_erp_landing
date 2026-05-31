@@ -104,7 +104,7 @@ export default async function AlternativeDetail({ params }: { params: Params }) 
         <section className="bg-black text-white pt-32 pb-16 border-b border-[#262626]">
           <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
             <span className="eyebrow text-[#9333EA]">{t("eyebrow", { name: c.name })}</span>
-            <h1 className="font-display text-4xl md:text-6xl font-medium mt-4 leading-[1.05] tracking-[-0.02em]">
+            <h1 className="font-display text-4xl md:text-6xl font-medium mt-4 leading-[1.05] tracking-[-0.02em] text-white">
               {t("title", { name: c.name, year })}
             </h1>
             <p className="text-lg text-[#A3A3A3] mt-6">{t("subtitle", { name: c.name })}</p>
@@ -119,7 +119,7 @@ export default async function AlternativeDetail({ params }: { params: Params }) 
 
         <section className="bg-white py-20">
           <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-            <div className="max-w-3xl mb-10">
+            <div className="max-w-3xl mx-auto text-center mb-10">
               <span className="eyebrow text-[#9333EA]">{t("reasonsEyebrow")}</span>
               <h2 className="font-display text-3xl md:text-4xl font-medium mt-3 text-[#111]">
                 {t("reasonsTitle", { name: c.name })}
@@ -138,7 +138,7 @@ export default async function AlternativeDetail({ params }: { params: Params }) 
 
         <section className="bg-[#FAFAFA] py-20 border-y border-[#E5E7EB]">
           <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-            <div className="max-w-3xl">
+            <div className="max-w-3xl mx-auto text-center">
               <span className="eyebrow text-[#9333EA]">{t("migrationEyebrow")}</span>
               <h2 className="font-display text-3xl md:text-4xl font-medium mt-3 text-[#111]">
                 {t("migrationTitle", { name: c.name })}
@@ -156,13 +156,13 @@ export default async function AlternativeDetail({ params }: { params: Params }) 
 
         <section className="bg-white py-20">
           <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-            <div className="max-w-3xl mb-8">
+            <div className="max-w-3xl mx-auto text-center mb-8">
               <span className="eyebrow text-[#9333EA]">{t("faqEyebrow")}</span>
               <h2 className="font-display text-3xl md:text-4xl font-medium mt-3 text-[#111]">
                 {t("faqTitle", { name: c.name })}
               </h2>
             </div>
-            <div className="space-y-4 max-w-3xl">
+            <div className="space-y-4 max-w-3xl mx-auto">
               {c.faqs.slice(0, 3).map((f) => (
                 <details key={f.q} className="card-light p-5 group">
                   <summary className="cursor-pointer font-display font-semibold text-[#111] list-none flex justify-between items-center">

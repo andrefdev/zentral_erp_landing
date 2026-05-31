@@ -110,13 +110,13 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${geist.variable} ${geistMono.variable} h-full antialiased`} suppressHydrationWarning>
+    <html lang={locale} className={`${geist.variable} ${geistMono.variable} antialiased`} suppressHydrationWarning>
       <head>
         <link rel="alternate" hrefLang="es" href={`${BASE_URL}/es`} />
         <link rel="alternate" hrefLang="en" href={`${BASE_URL}/en`} />
         <link rel="alternate" hrefLang="x-default" href={`${BASE_URL}/es`} />
       </head>
-      <body className="min-h-full">
+      <body>
         <NextIntlClientProvider messages={messages}>
           <SmoothScroll />
           {children}

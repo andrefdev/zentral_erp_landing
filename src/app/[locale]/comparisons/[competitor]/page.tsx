@@ -134,7 +134,7 @@ export default async function ComparisonDetail({ params }: { params: Params }) {
           <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto">
               <span className="eyebrow text-[#9333EA]">{t("eyebrow", { year })}</span>
-              <h1 className="font-display text-4xl md:text-6xl font-medium mt-4 leading-[1.05] tracking-[-0.02em]">
+              <h1 className="font-display text-4xl md:text-6xl font-medium mt-4 leading-[1.05] tracking-[-0.02em] text-white">
                 {t("title", { name: c.name })}
               </h1>
               <p className="text-lg text-[#A3A3A3] mt-6">{c.oneLiner}</p>
@@ -172,14 +172,14 @@ export default async function ComparisonDetail({ params }: { params: Params }) {
 
         <section className="bg-white py-20">
           <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-            <div className="max-w-3xl mb-10">
+            <div className="max-w-3xl mx-auto text-center mb-10">
               <span className="eyebrow text-[#9333EA]">{t("compareEyebrow")}</span>
               <h2 className="font-display text-3xl md:text-4xl font-medium mt-3 text-[#111]">
                 {t("compareTitle", { name: c.name })}
               </h2>
             </div>
-            <div className="overflow-x-auto overflow-y-visible">
-              <table className="w-full border-collapse text-sm">
+            <div className="overflow-x-auto md:overflow-visible">
+              <table className="w-full border-collapse text-sm min-w-[560px] md:min-w-0">
                 <thead>
                   <tr>
                     <th className="text-left py-4 pr-4 font-medium text-[#555]">{t("tableFeature")}</th>
@@ -237,7 +237,7 @@ export default async function ComparisonDetail({ params }: { params: Params }) {
 
         <section className="bg-white py-20">
           <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-            <div className="max-w-3xl">
+            <div className="max-w-3xl mx-auto text-center">
               <span className="eyebrow text-[#9333EA]">{t("migrationEyebrow")}</span>
               <h2 className="font-display text-3xl md:text-4xl font-medium mt-3 text-[#111]">
                 {t("migrationTitle", { name: c.name })}
@@ -252,13 +252,13 @@ export default async function ComparisonDetail({ params }: { params: Params }) {
 
         <section className="bg-[#FAFAFA] py-20 border-t border-[#E5E7EB]">
           <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-            <div className="max-w-3xl mb-10">
+            <div className="max-w-3xl mx-auto text-center mb-10">
               <span className="eyebrow text-[#9333EA]">{t("faqEyebrow")}</span>
               <h2 className="font-display text-3xl md:text-4xl font-medium mt-3 text-[#111]">
                 {t("faqTitle", { name: c.name })}
               </h2>
             </div>
-            <div className="space-y-4 max-w-3xl">
+            <div className="space-y-4 max-w-3xl mx-auto">
               {c.faqs.map((f) => (
                 <details key={f.q} className="card-light p-5 group">
                   <summary className="cursor-pointer font-display font-semibold text-[#111] list-none flex justify-between items-center">
