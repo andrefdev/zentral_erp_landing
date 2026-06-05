@@ -5,6 +5,10 @@ type Plan = {
   name: string;
   price: string;
   priceSuffix?: string;
+  priceRegular?: string;
+  discount?: string;
+  modulos: string;
+  usuarios: string;
   impl: string;
   for: string;
   features: string[];
@@ -33,9 +37,15 @@ export async function Pricing() {
               <article className={`plan ${p.featured ? "is-featured" : ""}`} key={p.name}>
                 {p.featured && <span className="plan-tag">{t("mostPopular")}</span>}
                 <div className="plan-name">{p.name}</div>
+                {p.discount && <span className="plan-disc">{p.discount}</span>}
                 <div className={`plan-price ${isText ? "is-text" : ""}`}>
                   {p.price}
                   {p.priceSuffix && <span className="cad">{p.priceSuffix}</span>}
+                  {p.priceRegular && <span className="plan-reg">{p.priceRegular}</span>}
+                </div>
+                <div className="plan-meta">
+                  <span>{t("modulosLabel")} <strong>{p.modulos}</strong></span>
+                  <span>{t("usuariosLabel")} <strong>{p.usuarios}</strong></span>
                 </div>
                 <div className="plan-impl">{p.impl}</div>
                 <p className="plan-for">{p.for}</p>

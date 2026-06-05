@@ -618,6 +618,10 @@
 .plan-price { font: 800 44px/1 var(--font-sans); letter-spacing: -0.03em; color: var(--z-ink); display: flex; align-items: baseline; gap: 4px; }
 .plan-price.is-text { font-size: 32px; }
 .plan-price .cad { font-size: 16px; font-weight: 500; color: var(--z-n-500); }
+.plan-price .plan-reg { font: 500 16px/1 var(--font-sans); color: var(--z-n-400); text-decoration: line-through; margin-left: 6px; }
+.plan-disc { justify-self: start; background: rgba(168,212,32,.16); color: var(--z-lime-deep); font: 600 11px/1 var(--font-sans); letter-spacing: 0.02em; padding: 6px 10px; border-radius: 999px; margin-bottom: -4px; }
+.plan-meta { display: grid; gap: 6px; font: 400 13px/1.4 var(--font-sans); color: var(--z-n-600); }
+.plan-meta strong { color: var(--z-ink); font-weight: 600; }
 .plan-impl { font: 500 12px/1.4 var(--font-mono); color: var(--z-n-500); }
 .plan-for { font: 400 14px/1.5 var(--font-sans); color: var(--z-n-600); margin: 0; padding-top: 4px; border-top: 1px solid var(--border); }
 .plan-feats { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }

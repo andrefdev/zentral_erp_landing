@@ -500,10 +500,12 @@
       "eyebrow": "Pricing",
       "title": "An investment that pays for itself.",
       "mostPopular": "Most popular",
+      "modulosLabel": "Modules:",
+      "usuariosLabel": "Users:",
       "plans": [
-        { "name": "Starter", "price": "USD 79", "priceSuffix": "/ month", "impl": "+ USD 2,990 implementation", "for": "Small business that wants to bring order to core areas.", "features": ["Up to 2 Zentral solutions", "5 users included", "Guided onboarding", "Email support", "Executive dashboard (Insights)"], "cta": "Start with Starter", "ctaVariant": "ghost" },
-        { "name": "Professional", "price": "USD 199", "priceSuffix": "/ month", "impl": "+ USD 4,990 implementation", "for": "Growing company that needs several connected solutions.", "features": ["Everything in Starter", "Up to 4 solutions", "15 users included", "Cross-solution Zentral AI", "Custom reports", "Priority support", "Basic integrations"], "cta": "Start with Professional", "featured": true, "ctaVariant": "primary" },
-        { "name": "Enterprise", "price": "Custom", "impl": "From USD 6,500 implementation", "for": "Business groups and multi-company operations.", "features": ["Everything in Professional", "Full suite · 8 solutions", "Multi-company and multi-site", "Unlimited users", "Custom integrations and modules", "Dedicated account manager"], "cta": "Talk to sales", "ctaVariant": "ghost" }
+        { "name": "Starter", "price": "USD 99", "priceSuffix": "/ month", "priceRegular": "USD 129", "discount": "–23% · save USD 30", "modulos": "4", "usuarios": "5 (+USD 15 each)", "impl": "Launch price", "for": "Small business that wants to bring order to core areas.", "features": ["Guided onboarding", "Email support", "Executive dashboard (Insights)"], "cta": "Start with Starter", "ctaVariant": "ghost" },
+        { "name": "Professional", "price": "USD 199", "priceSuffix": "/ month", "priceRegular": "USD 259", "discount": "–23% · save USD 60", "modulos": "8", "usuarios": "15 (+USD 15 each)", "impl": "Launch price", "for": "Growing company that needs several connected solutions.", "features": ["Everything in Starter", "Cross-solution Zentral AI", "Custom reports", "Priority support", "Basic integrations"], "cta": "Start with Professional", "featured": true, "ctaVariant": "primary" },
+        { "name": "Enterprise", "price": "Custom", "modulos": "All / tailored", "usuarios": "Unlimited", "impl": "Closed proposal · launch terms", "for": "Business groups and multi-company operations.", "features": ["Everything in Professional", "Multi-company and multi-site", "Custom integrations and modules", "Dedicated account manager"], "cta": "Talk to sales", "ctaVariant": "ghost" }
       ],
       "trust": ["No lock-in contract", "Demo before signing", "Implementation support included"],
       "addons": "Additional users USD 15/month · Extra modules · AI automations · Custom reports"
