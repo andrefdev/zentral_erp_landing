@@ -35,7 +35,7 @@ export default async function Home({
       <Navbar />
       <main>
         <Hero />
-        <LogoBar />
+        {/* <LogoBar /> oculto temporalmente */}
         <Problem />
         <Solution />
         <Features />
