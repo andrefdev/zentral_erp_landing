@@ -27,6 +27,50 @@ export async function Footer(_props: { locale?: string } = {}) {
           ))}
         </div>
       </div>
+      <div className="footer-badges">
+        <a
+          href="https://dang.ai"
+          target="_blank"
+          rel="dofollow noopener"
+          aria-label="Verified on DANG!"
+        >
+          <img
+            src="https://assets.dang.ai/badges/dang-verified-dark.png"
+            alt="Verified on DANG!"
+            width={260}
+            height={94}
+            loading="lazy"
+          />
+        </a>
+        <a
+          href="https://twelve.tools"
+          target="_blank"
+          rel="dofollow noopener"
+          aria-label="Featured on Twelve Tools"
+        >
+          <img
+            src="https://twelve.tools/badge1-white.svg"
+            alt="Featured on Twelve Tools"
+            width={200}
+            height={54}
+            loading="lazy"
+          />
+        </a>
+        <a
+          href="https://wired.business"
+          target="_blank"
+          rel="dofollow noopener"
+          aria-label="Featured on Wired Business"
+        >
+          <img
+            src="https://wired.business/badge0-white.svg"
+            alt="Featured on Wired Business"
+            width={200}
+            height={54}
+            loading="lazy"
+          />
+        </a>
+      </div>
       <div className="footer-bottom">
         <span>{t("copyright")}</span>
         <span>{t("madeIn")}</span>

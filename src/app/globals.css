@@ -726,6 +726,8 @@
 .footer-h { font: 500 12px/1 var(--font-sans); text-transform: uppercase; letter-spacing: 0.10em; color: var(--z-n-500); margin: 0 0 4px; }
 .footer-col a { font: 400 14px/1.4 var(--font-sans); color: var(--z-n-700); }
 .footer-col a:hover { color: var(--z-ink); }
+.footer-badges { max-width: var(--layout-max); margin: 0 auto; padding: 8px 32px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+.footer-badges img { display: block; height: auto; max-width: 100%; border: 0; }
 .footer-bottom { max-width: var(--layout-max); margin: 0 auto; padding: 16px 32px 28px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; font: 400 12px/1.4 var(--font-sans); color: var(--z-n-500); }
 
 /* =============================================================
