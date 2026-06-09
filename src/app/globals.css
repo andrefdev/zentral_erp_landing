@@ -207,6 +207,10 @@
  * ============================================================= */
 .hero {
   position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
   background:
     radial-gradient(ellipse 70% 55% at 85% 30%, rgba(198,242,62,.10), transparent 60%),
     radial-gradient(ellipse 60% 50% at 10% 100%, rgba(255,181,70,.06), transparent 60%);
@@ -228,7 +232,8 @@
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
   gap: 56px;
   align-items: center;
-  padding: 88px 32px 96px;
+  width: 100%;
+  padding: 96px 32px;
   max-width: var(--layout-max);
   margin: 0 auto;
 }
@@ -863,7 +868,7 @@
   .section { padding: 80px 0; }
   .nav-links { display: none; }
   .hamburger { display: inline-flex; }
-  .hero-inner { grid-template-columns: 1fr; gap: 48px; padding: 64px 32px 72px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 48px; padding: 104px 32px 64px; }
   .hero-h { font-size: 56px; }
   .mock { transform: none; }
   .split { grid-template-columns: 1fr; gap: 48px; padding: 64px 0; }
@@ -900,7 +905,7 @@
   .nav-inner { padding: 12px 20px; gap: 12px; }
   .nav.is-stuck { padding: 8px 12px 0; }
   .nav.is-stuck .nav-inner { padding: 8px 8px 8px 16px; }
-  .hero-inner { padding: 56px 20px 64px; }
+  .hero-inner { padding: 96px 20px 56px; }
   .hero-h { font-size: 44px; }
   .hero-sub { font-size: 17px; }
   .h2 { font-size: 30px; }
