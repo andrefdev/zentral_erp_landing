@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, Check, UserCheck, Users, Wallet, Package, ShoppingCart, Wrench, Folder, BarChart3, ShieldCheck } from "lucide-react";
+import { ArrowRight, Check, Users, Wallet, Package, ShoppingCart, Wrench, Folder, BarChart3, ShieldCheck } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 const ICONS = [Users, Wallet, Package, ShoppingCart, Wrench, Folder, BarChart3, ShieldCheck];
@@ -82,9 +82,6 @@ export function Solution() {
                       <li key={sub}><Check size={14} />{sub}</li>
                     ))}
                   </ul>
-                  <span className="sol-pane-buyer">
-                    <UserCheck size={14} />{t("buyerLabel")} · {s.buyer}
-                  </span>
                 </div>
               );
             })}

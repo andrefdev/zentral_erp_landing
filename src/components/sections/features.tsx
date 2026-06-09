@@ -110,7 +110,7 @@ function SettingsMock() {
   return (
     <div className="settings" aria-hidden>
       <div className="settings-h">
-        <h4>Soluciones activas</h4>
+        <h4>Apps activas</h4>
         <div className="meta">{onCount} / {settingsRows.length} activos</div>
       </div>
       <div className="settings-list">

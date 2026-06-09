@@ -1,10 +1,11 @@
-import { ArrowDown } from "lucide-react";
-import { getTranslations } from "next-intl/server";
-import { HeroMock } from "./hero-mock";
+import { ArrowDown, ArrowRight } from "lucide-react";
+import { getLocale, getTranslations } from "next-intl/server";
+import { HeroShot } from "./hero-shot";
 import { Waitlist } from "./waitlist";
 
 export async function Hero() {
   const t = await getTranslations("landing.hero");
+  const locale = await getLocale();
   return (
     <section className="hero" id="top">
       <div className="hero-inner">
@@ -17,11 +18,11 @@ export async function Hero() {
           <p className="hero-sub">{t("subtitle")}</p>
           <Waitlist />
           <div className="hero-cta">
+            <a className="btn btn--primary btn--lg" href={`/${locale}/product`}>
+              {t("ctaProduct")} <ArrowRight size={16} />
+            </a>
             <a className="btn btn--ghost btn--lg" href="#solucion">
               {t("ctaHowItWorks")} <ArrowDown size={16} />
-            </a>
-            <a className="btn btn--ghost btn--lg" href="https://indrox.com/contact" target="_blank" rel="noopener noreferrer">
-              {t("ctaDemo")}
             </a>
           </div>
           <div className="hero-trust">
@@ -30,7 +31,7 @@ export async function Hero() {
             <span>{t("trust3")}</span>
           </div>
         </div>
-        <HeroMock />
+        <HeroShot />
       </div>
     </section>
   );

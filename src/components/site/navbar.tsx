@@ -30,7 +30,11 @@ export function Navbar() {
     return () => document.removeEventListener("scroll", onScroll);
   }, []);
 
-  const links = t.raw("links") as NavLink[];
+  const rawLinks = t.raw("links") as NavLink[];
+  const links = rawLinks.map((l) => ({
+    ...l,
+    href: l.href.startsWith("/") ? `/${locale}${l.href}` : l.href,
+  }));
   const ctaHref = "https://indrox.com/contact";
 
   return (
